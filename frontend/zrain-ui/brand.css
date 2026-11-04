@@ -1,0 +1,804 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal): 2026-10-27
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: src/brand.css
+ * BM: Token visual, layout, penanda aktif dan paparan responsif bersama.
+ * EN: Shared design tokens, layouts, active indicators and responsive behavior.
+ */
+/* BM: Token warna bersama yang menjadi sumber tunggal untuk identiti Zrain.
+   EN: Shared color tokens acting as the single source for Zrain brand identity. */
+:root {
+  /* BM: Warna dakwat gelap digunakan untuk tajuk dan teks identiti utama.
+     EN: Dark ink is used for headings and primary identity text. */
+  --zrain-brand-ink: #121e2a;
+  /* BM: Warna kelabu lembut membezakan label sekunder daripada jenama.
+     EN: Muted gray distinguishes secondary labels from brand text. */
+  --zrain-brand-muted: #667286;
+  /* BM: Terracotta rasmi menandakan interaksi dan pautan yang penting.
+     EN: Official terracotta highlights important links and interactions. */
+  --zrain-brand-accent: #bd5338;
+  /* BM: Warna sempadan hangat memisahkan header/footer secara halus.
+     EN: Warm border color subtly separates header and footer. */
+  --zrain-brand-edge: #eddfd5;
+  /* BM: Latar footer krim mengekalkan gaya cozy Zrain.
+     EN: Cream footer paper background keeps the cozy Zrain style. */
+  --zrain-brand-paper: #fff7f1;
+}
+/* BM: Gunakan font yang sama di seluruh halaman apabila CSS ini dimuatkan.
+   EN: Use a consistent font stack throughout pages loading this stylesheet. */
+body {
+  /* BM: Gunakan senarai font dengan fallback apabila Inter tidak tersedia.
+     EN: Use a font stack with fallbacks if Inter is unavailable. */
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+/* BM: Letakkan header di atas kandungan ketika scroll tanpa menguasai navigation produk.
+   EN: Keep the header above page content while scrolling without owning product navigation. */
+.zrain-header {
+  /* BM: Pastikan kedudukan header kekal konsisten ketika pengguna scroll.
+     EN: Maintain consistent header positioning during scrolling. */
+  position: sticky;
+  /* BM: Tetapkan titik lekat header pada bahagian atas viewport.
+     EN: Anchor the sticky header to the top of the viewport. */
+  top: 0;
+  /* BM: Pastikan header terapung di atas kandungan biasa.
+     EN: Keep the header above ordinary page content. */
+  z-index: 15;
+  /* BM: Tetapkan warna latar yang menyokong identiti lembut Zrain.
+     EN: Set a background compatible with Zrain’s soft visual identity. */
+  background: rgba(255, 250, 248, .96);
+  /* BM: Pisahkan header daripada kandungan dengan garis nipis.
+     EN: Separate the header from content with a thin rule. */
+  border-bottom: 1px solid var(--zrain-brand-edge);
+  /* BM: Kaburkan latar belakang header sticky dengan lembut.
+     EN: Gently blur content behind the sticky header. */
+  backdrop-filter: blur(14px);
+}
+/* BM: Hadkan kandungan header dan jajarkan identiti dengan navigasi.
+   EN: Constrain the header content and align brand identity with navigation. */
+.zrain-header .zrain-header__inner {
+  /* BM: Tetapkan lebar mengikut saiz paparan atau komponen.
+     EN: Set width according to viewport or component size. */
+  width: min(1160px, calc(100% - 48px));
+  /* BM: Tetapkan had lebar sambil membenarkan responsiviti.
+     EN: Set width constraints while retaining responsiveness. */
+  max-width: none;
+  /* BM: Pastikan kawasan interaktif mempunyai ketinggian minimum.
+     EN: Maintain a minimum height for the interactive area. */
+  min-height: 75px;
+  /* BM: Tetapkan tinggi komponen bagi kestabilan susun atur.
+     EN: Set component height for layout stability. */
+  height: auto;
+  /* BM: Pusatkan bekas kandungan secara mendatar.
+     EN: Center the content container horizontally. */
+  margin-inline: auto;
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: flex;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 32px;
+}
+/* BM: Jajarkan logo, nama dan identiti produk dalam satu kumpulan.
+   EN: Align logo, name and product identity into a single group. */
+.zrain-header .zrain-brand {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: inline-flex;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 10px;
+  /* BM: Kawal sama ada elemen boleh mengecil ketika ruang sempit.
+     EN: Control whether an element may shrink when space is limited. */
+  flex-shrink: 0;
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-ink);
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 500;
+  /* BM: Tetapkan hiasan teks sesuai dengan peranan pautan.
+     EN: Set text decoration appropriate to the link role. */
+  text-decoration: none;
+}
+/* BM: Pastikan imej logo rasmi kekal jelas pada saiz yang konsisten.
+   EN: Keep the official logo legible at a consistent size. */
+.zrain-header .zrain-brand__logo {
+  /* BM: Tetapkan lebar mengikut saiz paparan atau komponen.
+     EN: Set width according to viewport or component size. */
+  width: 42px;
+  /* BM: Tetapkan tinggi komponen bagi kestabilan susun atur.
+     EN: Set component height for layout stability. */
+  height: 42px;
+  /* BM: Kekalkan nisbah imej logo supaya tidak terdistorsi.
+     EN: Preserve logo aspect ratio without stretching. */
+  object-fit: contain;
+  /* BM: Bulatkan sudut mengikut bahasa visual Zrain.
+     EN: Round corners according to Zrain’s visual language. */
+  border-radius: 0;
+  /* BM: Tetapkan warna latar yang menyokong identiti lembut Zrain.
+     EN: Set a background compatible with Zrain’s soft visual identity. */
+  background: transparent;
+  /* BM: Kawal sama ada elemen boleh mengecil ketika ruang sempit.
+     EN: Control whether an element may shrink when space is limited. */
+  flex-shrink: 0;
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: block;
+}
+/* BM: Gayakan label jenama lama bagi aplikasi pengguna yang masih memerlukannya.
+   EN: Style the legacy brand label for consuming applications that still use it. */
+.zrain-header .zrain-brand__label {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: inline-flex;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: baseline;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 7px;
+  /* BM: Gunakan senarai font dengan fallback apabila Inter tidak tersedia.
+     EN: Use a font stack with fallbacks if Inter is unavailable. */
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  /* BM: Kawal saiz teks untuk hierarchy maklumat yang jelas.
+     EN: Control text size for a clear information hierarchy. */
+  font-size: 17px;
+  /* BM: Tetapkan jarak menegak tulisan untuk kebolehbacaan.
+     EN: Set text line spacing for readability. */
+  line-height: 1.35;
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 500;
+  /* BM: Perhalus jarak aksara untuk ketekalan tipografi.
+     EN: Fine-tune character spacing for typography consistency. */
+  letter-spacing: -.4px;
+  /* BM: Elakkan label navigasi terpecah pada ruang yang sempit.
+     EN: Prevent navigation labels from wrapping unpredictably. */
+  white-space: nowrap;
+}
+/* BM: Berikan penekanan visual pada nama Zrain dalam label lama.
+   EN: Emphasize the Zrain name in the legacy brand label. */
+.zrain-header .zrain-brand__label strong {
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-ink);
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 800;
+}
+/* BM: Bezakan nama produk daripada identiti utama Zrain.
+   EN: Distinguish the product name from the primary Zrain identity. */
+.zrain-header .zrain-brand__product {
+  /* BM: Kawal ruang luaran mengikut peranan komponen.
+     EN: Control outer spacing according to component responsibility. */
+  margin: 0;
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-muted);
+  /* BM: Kawal saiz teks untuk hierarchy maklumat yang jelas.
+     EN: Control text size for a clear information hierarchy. */
+  font-size: inherit;
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 500;
+  /* BM: Perhalus jarak aksara untuk ketekalan tipografi.
+     EN: Fine-tune character spacing for typography consistency. */
+  letter-spacing: inherit;
+}
+.zrain-header .topnav,
+.zrain-header .main-nav {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: flex;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 22px;
+  /* BM: Kawal penjajaran menu relatif kepada identiti header.
+     EN: Position the menu relative to the header identity. */
+  margin-left: auto;
+  /* BM: Kekalkan ruang kanan menu mengikut layout.
+     EN: Keep menu right spacing consistent with the layout. */
+  margin-right: 0;
+}
+.zrain-header .topnav a,
+.zrain-header .main-nav a {
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: #526071;
+  /* BM: Kawal saiz teks untuk hierarchy maklumat yang jelas.
+     EN: Control text size for a clear information hierarchy. */
+  font-size: 12px;
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 650;
+  /* BM: Gunakan senarai font dengan fallback apabila Inter tidak tersedia.
+     EN: Use a font stack with fallbacks if Inter is unavailable. */
+  font-family: inherit;
+  /* BM: Elakkan label navigasi terpecah pada ruang yang sempit.
+     EN: Prevent navigation labels from wrapping unpredictably. */
+  white-space: nowrap;
+}
+/* BM: Kekalkan keserasian visual untuk class current milik produk lama.
+   EN: Preserve active text styling for legacy product-owned current classes. */
+.zrain-header .topnav a.current {
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: #b8492e;
+}
+.zrain-header .nav-github,
+.zrain-header .account-actions .button,
+.zrain-header > .zrain-header__inner > .button {
+  /* BM: Pastikan kawasan interaktif mempunyai ketinggian minimum.
+     EN: Maintain a minimum height for the interactive area. */
+  min-height: 42px;
+  /* BM: Bulatkan sudut mengikut bahasa visual Zrain.
+     EN: Round corners according to Zrain’s visual language. */
+  border-radius: 9px;
+}
+/* BM: Bina kawasan footer rasmi yang berasingan daripada kandungan produk.
+   EN: Build the official footer area separate from product content. */
+.zrain-footer {
+  /* BM: Tetapkan lebar mengikut saiz paparan atau komponen.
+     EN: Set width according to viewport or component size. */
+  width: 100%;
+  /* BM: Tetapkan had lebar sambil membenarkan responsiviti.
+     EN: Set width constraints while retaining responsiveness. */
+  max-width: none;
+  /* BM: Pisahkan footer daripada kandungan utama dengan jarak tetap.
+     EN: Separate the footer from main content with stable spacing. */
+  margin-top: 70px;
+  /* BM: Sediakan ruang dalaman yang cukup supaya elemen tidak bersesak.
+     EN: Provide inner spacing so component contents do not feel cramped. */
+  padding: 0;
+  /* BM: Tetapkan warna latar yang menyokong identiti lembut Zrain.
+     EN: Set a background compatible with Zrain’s soft visual identity. */
+  background: var(--zrain-brand-paper);
+  /* BM: Tandakan permulaan footer tanpa kesan visual berlebihan.
+     EN: Mark the footer boundary without excessive decoration. */
+  border-top: 1px solid var(--zrain-brand-edge);
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-ink);
+  /* BM: Gunakan senarai font dengan fallback apabila Inter tidak tersedia.
+     EN: Use a font stack with fallbacks if Inter is unavailable. */
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+/* BM: Susun kredit developer dan pautan footer secara seimbang.
+   EN: Balance developer credit and footer links within one container. */
+.zrain-footer .zrain-footer__inner {
+  /* BM: Tetapkan lebar mengikut saiz paparan atau komponen.
+     EN: Set width according to viewport or component size. */
+  width: min(1160px, calc(100% - 48px));
+  /* BM: Tetapkan had lebar sambil membenarkan responsiviti.
+     EN: Set width constraints while retaining responsiveness. */
+  max-width: none;
+  /* BM: Pusatkan bekas kandungan secara mendatar.
+     EN: Center the content container horizontally. */
+  margin-inline: auto;
+  /* BM: Sediakan ruang dalaman yang cukup supaya elemen tidak bersesak.
+     EN: Provide inner spacing so component contents do not feel cramped. */
+  padding: 22px 0;
+  /* BM: Pastikan kawasan interaktif mempunyai ketinggian minimum.
+     EN: Maintain a minimum height for the interactive area. */
+  min-height: 91px;
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: flex;
+  /* BM: Agihkan elemen sepanjang paksi utama komponen.
+     EN: Distribute elements along the main axis of the component. */
+  justify-content: space-between;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 18px;
+  /* BM: Tentukan arah susunan flex mengikut ruang yang tersedia.
+     EN: Select the flex layout direction for available space. */
+  flex-direction: row;
+}
+/* BM: Jajarkan logo dan kredit Zrain dalam footer.
+   EN: Align the Zrain logo and developer credit inside the footer. */
+.zrain-footer .zrain-footer__identity {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: inline-flex;
+  /* BM: Kawal sama ada elemen boleh mengecil ketika ruang sempit.
+     EN: Control whether an element may shrink when space is limited. */
+  flex-shrink: 0;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 11px;
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-ink);
+}
+/* BM: Pastikan saiz logo footer seragam dan tidak terdistorsi.
+   EN: Keep the footer logo consistently sized without distortion. */
+.zrain-footer .zrain-footer__logo {
+  /* BM: Tetapkan lebar mengikut saiz paparan atau komponen.
+     EN: Set width according to viewport or component size. */
+  width: 38px;
+  /* BM: Tetapkan tinggi komponen bagi kestabilan susun atur.
+     EN: Set component height for layout stability. */
+  height: 38px;
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: block;
+  /* BM: Kekalkan nisbah imej logo supaya tidak terdistorsi.
+     EN: Preserve logo aspect ratio without stretching. */
+  object-fit: contain;
+  /* BM: Kawal sama ada elemen boleh mengecil ketika ruang sempit.
+     EN: Control whether an element may shrink when space is limited. */
+  flex-shrink: 0;
+  /* BM: Bulatkan sudut mengikut bahasa visual Zrain.
+     EN: Round corners according to Zrain’s visual language. */
+  border-radius: 0;
+  /* BM: Tetapkan warna latar yang menyokong identiti lembut Zrain.
+     EN: Set a background compatible with Zrain’s soft visual identity. */
+  background: transparent;
+}
+/* BM: Susun developer credit di atas tagline rasmi.
+   EN: Stack developer credit above the official tagline. */
+.zrain-footer .zrain-footer__copy {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: flex;
+  /* BM: Tentukan arah susunan flex mengikut ruang yang tersedia.
+     EN: Select the flex layout direction for available space. */
+  flex-direction: column;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 2px;
+}
+/* BM: Pastikan kredit developer jelas sebagai teks utama footer.
+   EN: Make developer attribution clearly readable as the primary footer text. */
+.zrain-footer .zrain-footer__copy strong {
+  /* BM: Kawal saiz teks untuk hierarchy maklumat yang jelas.
+     EN: Control text size for a clear information hierarchy. */
+  font-size: 12px;
+  /* BM: Tetapkan jarak menegak tulisan untuk kebolehbacaan.
+     EN: Set text line spacing for readability. */
+  line-height: 1.45;
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 750;
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-ink);
+}
+/* BM: Paparkan tagline dengan saiz lebih kecil tanpa menghilangkan kebolehbacaan.
+   EN: Display the tagline in smaller but readable type. */
+.zrain-footer .zrain-footer__copy small {
+  /* BM: Kawal saiz teks untuk hierarchy maklumat yang jelas.
+     EN: Control text size for a clear information hierarchy. */
+  font-size: 10px;
+  /* BM: Tetapkan jarak menegak tulisan untuk kebolehbacaan.
+     EN: Set text line spacing for readability. */
+  line-height: 1.5;
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 400;
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-muted);
+}
+/* BM: Jajarkan pautan dan benarkan wrap apabila ruang tidak mencukupi.
+   EN: Align links and allow wrapping when horizontal space runs out. */
+.zrain-footer .zrain-footer__links {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: flex;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Benarkan item berpindah baris apabila viewport sempit.
+     EN: Allow items to wrap when the viewport is narrow. */
+  flex-wrap: wrap;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 18px;
+}
+/* BM: Berikan gaya pautan footer konsisten dengan warna jenama.
+   EN: Style footer links consistently with the brand accent. */
+.zrain-footer .zrain-footer__links a {
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-accent);
+  /* BM: Kawal saiz teks untuk hierarchy maklumat yang jelas.
+     EN: Control text size for a clear information hierarchy. */
+  font-size: 11px;
+  /* BM: Tetapkan jarak menegak tulisan untuk kebolehbacaan.
+     EN: Set text line spacing for readability. */
+  line-height: 1.5;
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 500;
+  /* BM: Tetapkan hiasan teks sesuai dengan peranan pautan.
+     EN: Set text decoration appropriate to the link role. */
+  text-decoration: none;
+}
+/* BM: Tunjukkan maklum balas apabila tetikus berada di atas pautan.
+   EN: Show feedback when hovering a footer link. */
+.zrain-footer .zrain-footer__links a:hover {
+  /* BM: Tetapkan hiasan teks sesuai dengan peranan pautan.
+     EN: Set text decoration appropriate to the link role. */
+  text-decoration: underline;
+}
+/* BM: Laraskan jarak apabila viewport tablet mula sempit.
+   EN: Adjust spacing when tablet viewports become narrow. */
+@media (max-width: 800px) {
+  /* BM: Hadkan kandungan header dan jajarkan identiti dengan navigasi.
+     EN: Constrain the header content and align brand identity with navigation. */
+  .zrain-header .zrain-header__inner { gap: 16px; }
+  .zrain-header .topnav,
+  .zrain-header .main-nav { gap: 12px; }
+}
+/* BM: Smooth native anchor scroll hanya bagi halaman yang memilih scrollSpy, bukan semua produk.
+   EN: Native smooth anchor scrolling is opt-in for scrollSpy, not imposed on every product. */
+html.zrain-scrollspy--smooth { scroll-behavior: smooth; }
+/* BM: Pastikan sasaran anchor tidak tersembunyi di bawah header sticky.
+   EN: Keep an anchor target clear of the sticky header. */
+.zrain-scrollspy-target { scroll-margin-top: var(--zrain-scrollspy-offset, 72px); }
+
+/* BM: Gunakan susun atur mobile untuk lebar 700px ke bawah.
+   EN: Apply the mobile layout at widths of 700px and below. */
+@media (max-width: 700px) {
+  /* BM: Hadkan kandungan header dan jajarkan identiti dengan navigasi.
+     EN: Constrain the header content and align brand identity with navigation. */
+  .zrain-header .zrain-header__inner {
+    /* BM: Tetapkan lebar mengikut saiz paparan atau komponen.
+       EN: Set width according to viewport or component size. */
+    width: calc(100% - 28px);
+    /* BM: Pastikan kawasan interaktif mempunyai ketinggian minimum.
+       EN: Maintain a minimum height for the interactive area. */
+    min-height: 64px;
+    /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+       EN: Space adjacent elements for visual balance. */
+    gap: 12px;
+  }
+  /* BM: Pastikan imej logo rasmi kekal jelas pada saiz yang konsisten.
+     EN: Keep the official logo legible at a consistent size. */
+  .zrain-header .zrain-brand__logo { width: 36px; height: 36px; }
+  /* BM: Gayakan label jenama lama bagi aplikasi pengguna yang masih memerlukannya.
+     EN: Style the legacy brand label for consuming applications that still use it. */
+  .zrain-header .zrain-brand__label { font-size: 14px; gap: 6px; }
+  /* BM: Guna gaya bersama yang juga serasi dengan markup aplikasi pengguna.
+     EN: Apply shared styles compatible with consuming application markup. */
+  .zrain-header .main-nav { display: none; }
+  /* BM: Susun kredit developer dan pautan footer secara seimbang.
+     EN: Balance developer credit and footer links within one container. */
+  .zrain-footer .zrain-footer__inner {
+    /* BM: Tetapkan lebar mengikut saiz paparan atau komponen.
+       EN: Set width according to viewport or component size. */
+    width: calc(100% - 28px);
+    /* BM: Tentukan arah susunan flex mengikut ruang yang tersedia.
+       EN: Select the flex layout direction for available space. */
+    flex-direction: column;
+    /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+       EN: Align elements on the cross axis for visual consistency. */
+    align-items: flex-start;
+    /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+       EN: Space adjacent elements for visual balance. */
+    gap: 16px;
+  }
+}
+/* BM: Pastikan kawalan header tersusun pada telefon kecil.
+   EN: Arrange header controls safely on narrow phones. */
+@media (max-width: 450px) {
+  /* BM: Hadkan kandungan header dan jajarkan identiti dengan navigasi.
+     EN: Constrain the header content and align brand identity with navigation. */
+  .zrain-header .zrain-header__inner { flex-wrap: wrap; }
+  /* BM: Susun pautan navigasi dalam header pada satu baris sebelum peraturan responsif digunakan.
+     EN: Arrange header links in a row before responsive rules take effect. */
+  .zrain-header .topnav { order: 3; flex: 1 0 100%; justify-content: flex-start; }
+  /* BM: Guna gaya bersama yang juga serasi dengan markup aplikasi pengguna.
+     EN: Apply shared styles compatible with consuming application markup. */
+  .zrain-header .account-actions { margin-left: auto; }
+}
+
+/* BM: Paparkan pautan identiti Zrain tanpa gaya anchor biasa.
+   EN: Render the main Zrain identity link without default anchor styling. */
+.zrain-header .zrain-brand__home {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: inline-flex;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 10px;
+  /* BM: Kawal sama ada elemen boleh mengecil ketika ruang sempit.
+     EN: Control whether an element may shrink when space is limited. */
+  flex-shrink: 0;
+  /* BM: Gunakan senarai font dengan fallback apabila Inter tidak tersedia.
+     EN: Use a font stack with fallbacks if Inter is unavailable. */
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 800;
+  /* BM: Kawal saiz teks untuk hierarchy maklumat yang jelas.
+     EN: Control text size for a clear information hierarchy. */
+  font-size: 17px;
+  /* BM: Tetapkan jarak menegak tulisan untuk kebolehbacaan.
+     EN: Set text line spacing for readability. */
+  line-height: 1.35;
+  /* BM: Perhalus jarak aksara untuk ketekalan tipografi.
+     EN: Fine-tune character spacing for typography consistency. */
+  letter-spacing: -.4px;
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-ink);
+  /* BM: Tetapkan hiasan teks sesuai dengan peranan pautan.
+     EN: Set text decoration appropriate to the link role. */
+  text-decoration: none;
+}
+/* BM: Tekankan teks jenama supaya identiti kelihatan jelas.
+   EN: Emphasize the brand text so its identity remains obvious. */
+.zrain-header .zrain-brand__name { font-weight: 800; }
+/* BM: Bezakan nama produk daripada identiti utama Zrain.
+   EN: Distinguish the product name from the primary Zrain identity. */
+.zrain-header .zrain-brand__product {
+  /* BM: Kawal saiz teks untuk hierarchy maklumat yang jelas.
+     EN: Control text size for a clear information hierarchy. */
+  font-size: 17px;
+  /* BM: Tetapkan jarak menegak tulisan untuk kebolehbacaan.
+     EN: Set text line spacing for readability. */
+  line-height: 1.35;
+  /* BM: Kawal ketebalan teks tanpa menggunakan imej bagi label.
+     EN: Control text weight without replacing text labels with images. */
+  font-weight: 500;
+  /* BM: Tetapkan hiasan teks sesuai dengan peranan pautan.
+     EN: Set text decoration appropriate to the link role. */
+  text-decoration: none;
+}
+.zrain-header .zrain-brand__home:hover,
+.zrain-header .zrain-brand__product:hover,
+.zrain-footer .zrain-footer__home:hover { text-decoration: none; }
+.zrain-header .zrain-brand__home:focus-visible,
+.zrain-header .zrain-brand__product:focus-visible,
+.zrain-footer .zrain-footer__home:focus-visible {
+  /* BM: Paparkan penunjuk fokus yang boleh dilihat pengguna keyboard.
+     EN: Display a focus indicator visible to keyboard users. */
+  outline: 3px solid #c68066;
+  /* BM: Asingkan outline fokus daripada sempadan komponen.
+     EN: Offset the focus outline from the component boundary. */
+  outline-offset: 3px;
+  /* BM: Bulatkan sudut mengikut bahasa visual Zrain.
+     EN: Round corners according to Zrain’s visual language. */
+  border-radius: 4px;
+}
+/* BM: Kekalkan logo dan kredit developer sebagai satu pautan footer.
+   EN: Keep logo and developer credit inside one footer link. */
+.zrain-footer .zrain-footer__home {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: inline-flex;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+     EN: Space adjacent elements for visual balance. */
+  gap: 11px;
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-ink);
+  /* BM: Tetapkan hiasan teks sesuai dengan peranan pautan.
+     EN: Set text decoration appropriate to the link role. */
+  text-decoration: none;
+}
+/* BM: Berikan tindak balas lembut pada kredit apabila pautan dihover.
+   EN: Apply subtle hover feedback to developer credit. */
+.zrain-footer .zrain-footer__home:hover .zrain-footer__copy strong {
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-accent);
+}
+/* BM: Smooth native anchor scroll hanya bagi halaman yang memilih scrollSpy, bukan semua produk.
+   EN: Native smooth anchor scrolling is opt-in for scrollSpy, not imposed on every product. */
+html.zrain-scrollspy--smooth { scroll-behavior: smooth; }
+/* BM: Pastikan sasaran anchor tidak tersembunyi di bawah header sticky.
+   EN: Keep an anchor target clear of the sticky header. */
+.zrain-scrollspy-target { scroll-margin-top: var(--zrain-scrollspy-offset, 72px); }
+
+/* BM: Gunakan susun atur mobile untuk lebar 700px ke bawah.
+   EN: Apply the mobile layout at widths of 700px and below. */
+@media (max-width: 700px) {
+  /* BM: Paparkan pautan identiti Zrain tanpa gaya anchor biasa.
+     EN: Render the main Zrain identity link without default anchor styling. */
+  .zrain-header .zrain-brand__home { font-size: 14px; gap: 7px; }
+  /* BM: Bezakan nama produk daripada identiti utama Zrain.
+     EN: Distinguish the product name from the primary Zrain identity. */
+  .zrain-header .zrain-brand__product { font-size: 14px; }
+}
+
+/* BM: Bezakan nama produk daripada identiti utama Zrain.
+   EN: Distinguish the product name from the primary Zrain identity. */
+.zrain-header .zrain-brand__product {
+  /* BM: Jarakkan teks daripada pemisah atau tepi komponen.
+     EN: Space text away from a divider or component edge. */
+  padding-left: 11px;
+  /* BM: Wujudkan pemisah antara nama Zrain dengan nama produk.
+     EN: Create a separator between Zrain and the product name. */
+  border-left: 1px solid #dbc9bf;
+}
+.zrain-header .topnav,
+.zrain-header .main-nav { gap: 5px; }
+.zrain-header .topnav a,
+.zrain-header .main-nav a {
+  /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+     EN: Choose the element display and layout mode. */
+  display: inline-flex;
+  /* BM: Selaraskan elemen pada paksi silang untuk penjajaran visual.
+     EN: Align elements on the cross axis for visual consistency. */
+  align-items: center;
+  /* BM: Agihkan elemen sepanjang paksi utama komponen.
+     EN: Distribute elements along the main axis of the component. */
+  justify-content: center;
+  /* BM: Jangan paksa ketinggian 38px; pautan Discover asal bersaiz padat mengikut teks dan padding.
+     EN: Do not force a 38px height; the original Discover link sizes compactly from text and padding. */
+  min-height: 0;
+  /* BM: Selaraskan ruang pautan dengan 8px/10px pada Discover dalam Zrain Ecosystem.
+     EN: Match the 8px/10px link padding of Discover in Zrain Ecosystem. */
+  padding: 8px 10px;
+  /* BM: Jangan tambah border 1px; Discover asal menggunakan penanda bawah inset, bukan border kotak.
+     EN: Do not add a 1px border; the original Discover uses an inset bottom indicator, not a box border. */
+  border: 0;
+  /* BM: Gunakan radius tepat 9px daripada active Discover asal.
+     EN: Use the exact 9px radius from the original active Discover state. */
+  border-radius: 9px;
+  /* BM: Ikuti ketinggian baris semula jadi agar tab tidak menjadi pil tinggi.
+     EN: Follow the natural line height so tabs do not turn into tall pills. */
+  line-height: normal;
+  /* BM: Tetapkan hiasan teks sesuai dengan peranan pautan.
+     EN: Set text decoration appropriate to the link role. */
+  text-decoration: none;
+  /* BM: Lembutkan perubahan hover dan fokus tanpa animasi berlebihan.
+     EN: Smooth hover and focus changes without excessive animation. */
+  transition: background-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.zrain-header .topnav a:hover,
+.zrain-header .main-nav a:hover {
+  /* BM: Tetapkan warna teks supaya hierarchy dan kontras jenama konsisten.
+     EN: Set text color to maintain brand hierarchy and contrast. */
+  color: var(--zrain-brand-accent);
+  /* BM: Tetapkan warna latar yang menyokong identiti lembut Zrain.
+     EN: Set a background compatible with Zrain’s soft visual identity. */
+  background: rgba(189, 83, 56, .07);
+}
+/* BM: Golden Reference: ambil secara tepat gaya Discover Zrain Ecosystem, bukan reka bentuk pill baharu.
+   EN: Golden Reference: reproduce the exact Zrain Ecosystem Discover style, not a new pill design.
+   BM: class current/active dan kedua-dua aria-current=page/location dilayan sama untuk menu milik produk.
+   EN: Treat current/active and both aria-current=page/location equally for product-owned menus. */
+.zrain-header .topnav a:is(.current, .active, [aria-current="page"], [aria-current="location"]),
+.zrain-header .main-nav a:is(.current, .active, [aria-current="page"], [aria-current="location"]) {
+  /* BM: Warna teks terracotta tepat daripada Discover, bukan warna active terdahulu.
+     EN: Use Discover's exact terracotta text color rather than the previous active color. */
+  color: #a64930;
+  /* BM: Tebalkan teks aktif kepada berat 850 seperti Discover yang diluluskan.
+     EN: Set active text weight to 850, matching the approved Discover style. */
+  font-weight: 850;
+  /* BM: Gunakan warna latar peach yang sama seperti Discover dalam Ecosystem.
+     EN: Use the same peach background as Discover in the Ecosystem. */
+  background: #fff1e9;
+  /* BM: Kekalkan penjuru padat 9px, bukan kotak besar seperti Quickstart lama.
+     EN: Keep the compact 9px corners rather than the old oversized Quickstart box. */
+  border-radius: 9px;
+  /* BM: Gunakan padding 8px menegak, 10px mendatar daripada rujukan sebenar.
+     EN: Use the exact 8px vertical, 10px horizontal padding from the source reference. */
+  padding: 8px 10px;
+  /* BM: Tunjukkan jalur terracotta 2px di bawah sebagai petunjuk halaman semasa.
+     EN: Show the 2px terracotta inset underline to indicate the current page. */
+  box-shadow: inset 0 -2px 0 #b95136;
+  /* BM: Ikuti peralihan active selama .22s yang digunakan oleh Ecosystem untuk perubahan seksyen.
+     EN: Match the Ecosystem's .22s active transition when the selected section changes. */
+  transition: background .22s ease, color .22s ease, box-shadow .22s ease;
+}
+.zrain-header .topnav a:focus-visible,
+.zrain-header .main-nav a:focus-visible,
+.zrain-footer .zrain-footer__links a:focus-visible {
+  /* BM: Paparkan penunjuk fokus yang boleh dilihat pengguna keyboard.
+     EN: Display a focus indicator visible to keyboard users. */
+  outline: 2px solid var(--zrain-brand-accent);
+  /* BM: Asingkan outline fokus daripada sempadan komponen.
+     EN: Offset the focus outline from the component boundary. */
+  outline-offset: 2px;
+}
+.zrain-footer .zrain-footer__home,
+.zrain-footer .zrain-footer__links a {
+  /* BM: Lembutkan perubahan hover dan fokus tanpa animasi berlebihan.
+     EN: Smooth hover and focus changes without excessive animation. */
+  transition: color .18s ease;
+}
+
+/* BM: Smooth native anchor scroll hanya bagi halaman yang memilih scrollSpy, bukan semua produk.
+   EN: Native smooth anchor scrolling is opt-in for scrollSpy, not imposed on every product. */
+html.zrain-scrollspy--smooth { scroll-behavior: smooth; }
+/* BM: Pastikan sasaran anchor tidak tersembunyi di bawah header sticky.
+   EN: Keep an anchor target clear of the sticky header. */
+.zrain-scrollspy-target { scroll-margin-top: var(--zrain-scrollspy-offset, 72px); }
+
+/* BM: Gunakan susun atur mobile untuk lebar 700px ke bawah.
+   EN: Apply the mobile layout at widths of 700px and below. */
+@media (max-width: 700px) {
+  /* BM: Hadkan aturan ini kepada menu yang memilih pengurusan Zrain UI.
+     EN: Scope this rule to menus opting into Zrain UI management. */
+  .zrain-header .zrain-header__inner--managed {
+    /* BM: Benarkan item berpindah baris apabila viewport sempit.
+       EN: Allow items to wrap when the viewport is narrow. */
+    flex-wrap: wrap;
+    /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+       EN: Space adjacent elements for visual balance. */
+    gap: 8px;
+    /* BM: Tambah ruang menegak tanpa menjejaskan susunan mendatar.
+       EN: Add vertical spacing without altering horizontal placement. */
+    padding-block: 9px;
+  }
+  .zrain-header .topnav.zrain-nav--managed,
+  .zrain-header .main-nav.zrain-nav--managed {
+    /* BM: Tentukan cara elemen disusun dan dipaparkan oleh layout.
+       EN: Choose the element display and layout mode. */
+    display: flex;
+    /* BM: Tukar susunan elemen pada layout responsif tanpa mengubah DOM.
+       EN: Reorder items responsively without changing the DOM. */
+    order: 3;
+    /* BM: Kawal agihan ruang flex bagi komponen navigasi.
+       EN: Control flex space allocation for the navigation component. */
+    flex: 1 0 100%;
+    /* BM: Benarkan ruang menu mengecil tanpa menyebabkan overflow halaman.
+       EN: Allow menu width to contract without causing page overflow. */
+    min-width: 0;
+    /* BM: Tetapkan lebar mengikut saiz paparan atau komponen.
+       EN: Set width according to viewport or component size. */
+    width: 100%;
+    /* BM: Benarkan menu mendatar discroll apabila tab melebihi lebar skrin.
+       EN: Allow horizontal scrolling when tabs exceed screen width. */
+    overflow-x: auto;
+    /* BM: Hadkan overscroll menu supaya tidak mengganggu halaman induk.
+       EN: Contain menu overscroll so it does not disturb the parent page. */
+    overscroll-behavior-x: contain;
+    /* BM: Sembunyikan trek scrollbar apabila scroll sentuh masih tersedia.
+       EN: Hide scrollbar tracks while preserving touch scrolling. */
+    scrollbar-width: none;
+    /* BM: Kawal ruang luaran mengikut peranan komponen.
+       EN: Control outer spacing according to component responsibility. */
+    margin: 0;
+    /* BM: Jarakkan elemen bersebelahan untuk keseimbangan visual.
+       EN: Space adjacent elements for visual balance. */
+    gap: 4px;
+  }
+  /* BM: Hadkan aturan ini kepada menu yang memilih pengurusan Zrain UI.
+     EN: Scope this rule to menus opting into Zrain UI management. */
+  .zrain-header .zrain-nav--managed::-webkit-scrollbar { display: none; }
+  /* BM: Hadkan aturan ini kepada menu yang memilih pengurusan Zrain UI.
+     EN: Scope this rule to menus opting into Zrain UI management. */
+  .zrain-header .zrain-nav--managed a { flex-shrink: 0; }
+  /* BM: Bezakan nama produk daripada identiti utama Zrain.
+     EN: Distinguish the product name from the primary Zrain identity. */
+  .zrain-header .zrain-brand__product { padding-left: 8px; }
+}
+/* BM: Hormati pilihan pengguna yang meminta pergerakan dikurangkan.
+   EN: Respect the user’s reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  /* BM: Jangan animasikan scroll apabila pengguna memilih reduced motion.
+     EN: Do not animate scrolling when the user prefers reduced motion. */
+  html.zrain-scrollspy--smooth { scroll-behavior: auto; }
+  .zrain-header .topnav a,
+  .zrain-header .main-nav a,
+  .zrain-footer .zrain-footer__home,
+  .zrain-footer .zrain-footer__links a { transition: none; }
+}

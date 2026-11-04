@@ -1,0 +1,600 @@
+{
+  "schema_version": 1,
+  "project": "zrain-ai",
+  "owner": "Zrain",
+  "generated_on": "2026-11-04",
+  "source_evidence": "User-supplied zrain-ai.zip and zrain-ui(3).zip; source ZIP lacked Git history",
+  "date_policy": "Creation and last content update dates are null when evidence is insufficient. Files modified on 2026-11-04 record that date; local copying alone is not an update.",
+  "files": {
+    ".gitignore": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Peraturan pengecualian source dan secrets.",
+      "purpose_en": "Ignore rules for source artifacts and secrets.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "FILE_PROVENANCE.json": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created in the engineering repair",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Inventori semua fail projek termasuk registry ini tanpa hash kendiri.",
+      "purpose_en": "Inventory of all project files including this registry without self-hashing.",
+      "source": "Created in the 2026-11-04 engineering repair",
+      "role": "provenance registry"
+    },
+    "README.md": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Dokumentasi pengguna dan pembangun untuk menjalankan serta menyerahkan Zrain AI.",
+      "purpose_en": "User and developer instructions for running and handing off Zrain AI.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "SETUP-CLOUDFLARE.md": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Panduan deployment dengan kawalan free-tier dan pengesahan Cloudflare.",
+      "purpose_en": "Deployment instructions with free-tier controls and Cloudflare checks.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "demo-paths.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menolak traversal path semasa pelayan demo menghidangkan fail statik.",
+      "purpose_en": "Reject path traversal while the demo server serves static files.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "demo-server.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Memberikan pratonton UI lokal dengan respons simulasi yang bukan inferens sebenar.",
+      "purpose_en": "Provide a local UI preview with mock responses, not real inference.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "docs/AI-HANDOFF.md": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during this repair",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Panduan sambungan kerja yang tidak memerlukan sejarah chat.",
+      "purpose_en": "Standalone continuation guide that needs no prior chat history.",
+      "source": "Created in the 2026-11-04 engineering repair",
+      "role": "project source"
+    },
+    "docs/ENGINEERING-AUDIT-2026-11-04.md": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during this repair",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Merekodkan penemuan audit, pembetulan, bukti, status dan batasan.",
+      "purpose_en": "Record audit findings, changes, evidence, statuses and limitations.",
+      "source": "Created in the 2026-11-04 engineering repair",
+      "role": "project source"
+    },
+    "docs/LOCAL-HISTORY-ATTACHMENTS.md": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mendokumenkan sejarah lokal dan had penyimpanan lampiran.",
+      "purpose_en": "Document local history and attachment storage boundaries.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "docs/WEB-RESEARCH-PREVIEW.md": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menjelaskan penyelidikan terhad serta pratonton kod yang terasing.",
+      "purpose_en": "Explain limited research and isolated code previews.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/app.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mengurus sesi, chat, kuota, sejarah setempat dan tindakan pengguna.",
+      "purpose_en": "Manage sessions, chat, quotas, local history and user actions.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/attachments.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mengesahkan fail pengguna serta mengekstrak kandungan mengikut had saiz dan jenis yang dibenarkan.",
+      "purpose_en": "Validate attachments and extract content within supported type and size limits.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/brand-integration.css": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during this repair",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Penyesuai susun atur untuk @zrain/ui 1.0.0 dalam skrin chat ber-viewport tetap.",
+      "purpose_en": "Layout adapter for @zrain/ui 1.0.0 inside the fixed-viewport chat experience.",
+      "source": "Created in the 2026-11-04 engineering repair",
+      "role": "project source"
+    },
+    "frontend/chat-polish.css": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menggilap penampilan chat tanpa mengubah komposer dan aliran respons.",
+      "purpose_en": "Polish the chat presentation without altering the composer or response flow.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/code-preview.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Membina pratonton kod terasing dalam iframe dengan polisi keselamatan ketat.",
+      "purpose_en": "Build isolated code previews inside a tightly restricted iframe.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/config.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menetapkan URL API production; jangan gantikan dengan alamat demo ketika release.",
+      "purpose_en": "Set the production API URL; never replace it with a demo endpoint for release.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/firebase.json": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": null,
+      "purpose_bm": "Tetapan Firebase Hosting, termasuk security headers.",
+      "purpose_en": "Firebase Hosting configuration including security headers.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/footer-layout.css": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Membahagikan viewport supaya chat, komposer dan footer kekal boleh digunakan.",
+      "purpose_en": "Partition the viewport so chat, composer and footer remain usable.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/history.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menyimpan sejarah perbualan pada browser pengguna, tanpa server sync.",
+      "purpose_en": "Store conversation history in the user browser without server sync.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/index.html": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menyusun aplikasi chat Zrain AI; header/footer menggunakan shared Zrain UI.",
+      "purpose_en": "Structure Zrain AI chat; the header/footer use shared Zrain UI.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/local-previews.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menyimpan pratonton lampiran sementara dalam IndexedDB pada browser.",
+      "purpose_en": "Keep short-lived attachment previews in browser IndexedDB.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/markdown.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Memaparkan Markdown sebagai nod DOM selamat tanpa menyisip HTML tidak dipercayai.",
+      "purpose_en": "Render Markdown as safe DOM nodes without injecting untrusted HTML.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/privacy.html": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menjelaskan pengendalian data dan privasi Zrain AI kepada pengguna.",
+      "purpose_en": "Explain Zrain AI data handling and privacy to visitors.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/research-preview.css": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menggayakan kawalan penyelidikan dan panel sumber yang disahkan.",
+      "purpose_en": "Style research controls and verified-source panels.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/style.css": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menyediakan asas reka bentuk dan layout skrin chat serta halaman dasar.",
+      "purpose_en": "Provide base design and layout for the chat shell and policy pages.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/terms.html": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menjelaskan hak penggunaan, had AI dan tanggungjawab pengguna.",
+      "purpose_en": "Explain terms of use, AI limits and user responsibilities.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "frontend/zrain-logo.webp": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": null,
+      "purpose_bm": "Logo rasmi Zrain untuk header, footer dan avatar.",
+      "purpose_en": "Official Zrain logo for header, footer and avatars.",
+      "source": "zrain-ui(3).zip",
+      "role": "official logo asset"
+    },
+    "frontend/zrain-ui/brand-init.js": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during this repair",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Pasang identiti Golden Reference pada halaman Zrain AI tanpa mengambil alih state chat.",
+      "purpose_en": "Mount the Golden Reference identity on Zrain AI pages without owning chat state.",
+      "source": "Created in the 2026-11-04 engineering repair",
+      "role": "project source"
+    },
+    "frontend/zrain-ui/brand.css": {
+      "developer": "Zrain",
+      "created": "2026-10-27",
+      "created_basis": "earliest upstream Git evidence recorded in reference header; initial authoring date may predate this",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Komponen dan gaya Golden Reference Zrain UI yang dipin secara tempatan.",
+      "purpose_en": "Locally pinned Zrain UI Golden Reference component and styles.",
+      "source": "zrain-ui(3).zip",
+      "role": "vendored shared UI"
+    },
+    "frontend/zrain-ui/zrain-ui.js": {
+      "developer": "Zrain",
+      "created": "2026-10-27",
+      "created_basis": "earliest upstream Git evidence recorded in reference header; initial authoring date may predate this",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Komponen dan gaya Golden Reference Zrain UI yang dipin secara tempatan.",
+      "purpose_en": "Locally pinned Zrain UI Golden Reference component and styles.",
+      "source": "zrain-ui(3).zip",
+      "role": "vendored shared UI"
+    },
+    "integration/install-ecosystem-ai.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menambah pautan optional pada Ecosystem dengan semakan anchor dan dry run.",
+      "purpose_en": "Optionally add an Ecosystem shortcut using anchor checks and a dry run.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "package.json": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Manifest skrip Node tanpa dependency runtime baharu.",
+      "purpose_en": "Node script manifest without added runtime dependencies.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "scripts/check-provenance.mjs": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during this repair",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mengesahkan semua fail sumber disenarai dan memiliki metadata yang sepadan.",
+      "purpose_en": "Verify all source files are inventoried and have matching format-safe metadata.",
+      "source": "Created in the 2026-11-04 engineering repair",
+      "role": "project source"
+    },
+    "scripts/configure.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Membantu mengkonfigurasi tetapan awam tanpa menyimpan secrets.",
+      "purpose_en": "Help configure non-secret public settings without storing secrets.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "scripts/preflight.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Memeriksa kelengkapan setup sebelum deploy tanpa memanggil perkhidmatan berbayar.",
+      "purpose_en": "Check setup completeness before deployment without calling paid services.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/attachment-research-completion.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/branding.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/chat-polish.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/chat-ux.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/completion-preview.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/composer-quota.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/demo-server.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/footer-layout.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/history-attachments.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/provenance.test.mjs": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during this repair",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Pastikan metadata inventori kekal konsisten selepas perubahan.",
+      "purpose_en": "Keep provenance records consistent across future changes.",
+      "source": "Created in the 2026-11-04 engineering repair",
+      "role": "project source"
+    },
+    "tests/repair-functional.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/research-closure.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/research-compatible-index.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/research-preview.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/ui-golden.test.mjs": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during this repair",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Uji kontrak shared header/footer pada semua halaman tanpa memerlukan browser rangkaian.",
+      "purpose_en": "Test shared header/footer contracts on all pages without network browser access.",
+      "source": "Created in the 2026-11-04 engineering repair",
+      "role": "project source"
+    },
+    "tests/viewport.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "tests/zrain-ai.test.mjs": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguji regresi fungsi dan kontrak produk bagi modul berkaitan.",
+      "purpose_en": "Test feature regressions and product contracts for the relevant module.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "worker/migrations/0001_usage.sql": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mewujudkan jadual kuota D1; migrasi terdahulu mesti kekal untuk deploy sedia ada.",
+      "purpose_en": "Create D1 quota tables; historic migrations must remain for existing deployments.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "worker/src/chat.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mengesahkan konteks perbualan dan menghantar inferens kepada model yang dibenarkan.",
+      "purpose_en": "Validate chat context and invoke only approved inference models.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "worker/src/index.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menyediakan API dengan sesi, Turnstile, pemeriksaan origin, kuota dan tindak balas selamat.",
+      "purpose_en": "Provide APIs with sessions, Turnstile, origin checks, quotas and safe responses.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "worker/src/quota.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Menguatkuasakan kuota harian dan kadar penggunaan dalam Cloudflare D1.",
+      "purpose_en": "Enforce daily and short-window consumption quotas in Cloudflare D1.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "worker/src/security.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mengesahkan origin, sesi bertandatangan dan token Turnstile.",
+      "purpose_en": "Validate origins, signed sessions and Turnstile tokens.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "worker/src/web-research.js": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mengambil bukti daripada Wikipedia dan halaman yang dibenarkan sahaja tanpa redirect.",
+      "purpose_en": "Fetch evidence only from Wikipedia and allowlisted pages without redirects.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    },
+    "worker/wrangler.toml": {
+      "developer": "Zrain",
+      "created": null,
+      "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
+      "last_updated": "2026-11-04",
+      "purpose_bm": "Mengkonfigurasi Worker, D1, AI binding, asal request dan had operasi percuma.",
+      "purpose_en": "Configure Worker, D1, AI binding, allowed origins and free-tier limits.",
+      "source": "zrain-ai.zip",
+      "role": "project source"
+    }
+  }
+}

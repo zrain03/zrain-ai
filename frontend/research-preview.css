@@ -1,0 +1,54 @@
+/*
+ * Fail / File: frontend/research-preview.css
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: Unknown / Belum disahkan (tiada Git history dalam ZIP asal)
+ * Dikemas kini / Last updated: 2026-11-04
+ * BM: Menggayakan kawalan penyelidikan dan panel sumber yang disahkan.
+ * EN: Style research controls and verified-source panels.
+ */
+/* Zrain AI: web research and isolated code preview, no layout changes. */
+.research-toggle{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;flex:0 0 auto;
+  width:auto;height:32px;min-height:32px;padding:0 11px;
+  border:1px solid #edddce;background:#fffaf6;border-radius:10px;color:#866456;
+  font-size:11px;font-weight:750;white-space:nowrap;line-height:1;
+}
+.research-toggle:hover{color:#a4432d;background:#ffede1;border-color:#dbab93}
+.research-toggle.is-active,.research-toggle[aria-pressed="true"]{color:#8f432f;background:#fff1e7;border-color:#d9a58d;box-shadow:0 0 0 3px rgba(121,201,176,.28)}
+.research-status-dot{width:8px;height:8px;border-radius:50%;background:#d7c6bb;display:inline-block;flex:none}
+.research-toggle.is-active .research-status-dot,.research-toggle[aria-pressed="true"] .research-status-dot{background:#46a873}
+.message-content a{color:#a9472f;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+.research-sources{margin:12px 0 6px;padding:10px 12px;background:#fffaf6;border:1px solid #eedccf;border-radius:12px;display:flex;flex-wrap:wrap;gap:7px 12px;max-width:100%}
+.research-sources-title{flex-basis:100%;color:#8c6452;font-size:10px;font-weight:850;letter-spacing:.04em;text-transform:uppercase}
+.research-sources a{display:inline-flex;max-width:100%;padding:5px 8px;border:1px solid #eedccc;border-radius:8px;font-size:11px;text-decoration:none;color:#a94c35;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.research-sources a:hover{background:#fff0e7}
+.code-heading .code-preview-trigger{border:1px solid #aecebd;background:#e9f3ee;color:#3b6d56;border-radius:7px;padding:5px 9px;font-size:11px;font-weight:750}
+.code-heading .code-preview-trigger:hover{background:#d8ebdf}
+.zrain-preview-dialog{border:1px solid #e5cbbf;border-radius:20px;background:white;color:#253544;box-shadow:0 30px 110px #1e27335e;width:min(1090px,calc(100vw - 26px));height:min(790px,calc(100dvh - 28px));max-width:none;max-height:none;padding:0;overflow:hidden}
+.zrain-preview-dialog::backdrop{background:#1c2936a9;backdrop-filter:blur(3px)}
+.zrain-preview-dialog[open]{display:flex;flex-direction:column}
+.zrain-preview-head{display:flex;align-items:center;gap:14px;padding:11px 16px;background:#fff7f2;border-bottom:1px solid #edd8cb;min-height:57px;flex-wrap:wrap}
+.zrain-preview-head strong{font-size:14px;color:#243442}
+.zrain-preview-tabs{display:flex;align-items:center;margin-left:auto;gap:5px}
+.zrain-preview-head button{cursor:pointer;border:1px solid #e9d5c9;background:white;color:#914d39;padding:7px 12px;border-radius:9px;font-size:11px;font-weight:750}
+.zrain-preview-head button.active{background:#b94f33;border-color:#b94f33;color:white}
+.zrain-preview-frame{display:block;flex:1;min-height:0;width:100%;border:0;background:white}
+.zrain-preview-console{flex:1;min-height:0;overflow:auto;background:#192b34;color:#dcf2df;font:12px/1.6 Consolas,monospace;padding:18px;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.zrain-preview-note{flex:none;margin:0;padding:9px 14px;background:#fffaf7;border-top:1px solid #eedfd5;color:#697988;font-size:11px;line-height:1.5}
+@media(max-width:780px){
+  .research-toggle{height:30px;min-height:30px;padding:0 9px;font-size:10px}
+  .zrain-preview-dialog{height:calc(100dvh - 12px);width:calc(100vw - 12px);border-radius:14px}
+  .zrain-preview-head{gap:7px;padding:9px}
+  .zrain-preview-head button{padding:7px;font-size:10px}
+  .zrain-preview-note{font-size:10px}
+}
+.code-heading{flex-wrap:wrap;justify-content:flex-start}
+.code-heading > span{margin-right:auto}
+
+/* Source transparency: a verified excerpt differs from a model-suggested link. */
+.research-sources{display:flex;flex-direction:column;align-items:stretch;gap:7px}
+.research-summary{margin:0;color:#54697a;font-size:11px;line-height:1.6}
+.research-checked{font-size:10px;color:#84909b}
+.research-source-item{display:flex;flex-direction:column;gap:4px;min-width:0;padding:7px 8px;background:#fff;border:1px solid #f1e5dc;border-radius:9px}
+.research-source-item a{align-self:flex-start;white-space:normal;overflow-wrap:anywhere}
+.research-source-excerpt{margin:0;color:#637382;font-size:11px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}

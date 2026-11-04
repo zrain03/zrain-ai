@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+  Fail / File: frontend/privacy.html
+  Pembangun / Developer: Zrain
+  Dicipta / Created: Unknown / Belum disahkan (tiada Git history dalam ZIP asal)
+  Dikemas kini / Last updated: 2026-11-04
+  BM: Menjelaskan pengendalian data dan privasi Zrain AI kepada pengguna.
+  EN: Explain Zrain AI data handling and privacy to visitors.
+-->
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="How Zrain AI handles chats, attachments, AI requests and usage data.">
+<meta name="theme-color" content="#fff7f1"><title>Privacy Policy | Zrain AI</title>
+<link rel="icon" href="./zrain-logo.webp" type="image/webp">
+<link rel="stylesheet" href="./style.css?ui=20261103g">
+  <link rel="stylesheet" href="./zrain-ui/brand.css?v=20261104">
+  <link rel="stylesheet" href="./brand-integration.css?v=20261104">
+<script type="module" src="./zrain-ui/brand-init.js?v=20261104"></script></head><body class="policy-body">
+<header class="site-header zrain-header"><div class="header-inner zrain-header__inner">
+<div class="brand zrain-brand"><a class="zrain-brand__home" href="https://zrain.web.app/" aria-label="Zrain ecosystem home"><img class="brand-logo-image zrain-brand__logo" src="./zrain-logo.webp" width="42" height="42" alt=""><strong class="zrain-brand__name">Zrain</strong></a><a class="zrain-brand__product" href="./" aria-label="Zrain AI home">AI</a></div>
+<a class="ecosystem-link" href="./">← Back to chat</a>
+</div></header>
+<main class="policy-shell">
+<section class="policy-hero"><div><div class="policy-eyebrow">Your privacy matters</div>
+<h1>Privacy Policy</h1><p>A clear explanation of how Zrain AI handles conversations, attachments, usage limits and local chat history.</p>
+<p class="policy-date">Last updated: 3 November 2026</p></div><div class="policy-symbol" aria-hidden="true">▤</div></section>
+<nav class="policy-tabs" aria-label="Policy pages"><a href="./privacy.html" aria-current="page">Privacy Policy</a><a href="./terms.html">Terms of Use</a><a href="./">Back to Zrain AI</a></nav>
+<div class="policy-grid">
+<aside class="policy-aside"><strong>On this page</strong><nav aria-label="Privacy sections">
+<a href="#overview">Overview</a><a href="#chats">Local chat history</a><a href="#attachments">Files and images</a><a href="#usage">Usage and security</a><a href="#providers">Service providers</a><a href="#choices">Your choices</a><a href="#contact">Contact</a>
+</nav></aside>
+<article class="policy-article">
+<h2 id="overview">1. Overview</h2>
+<p><strong>Zrain AI is developed by Zrain.</strong> The service provides AI assistance through a Cloudflare Worker and Cloudflare Workers AI. When you send a message, the text and relevant recent conversation context are processed to generate an answer. Zrain AI does not guarantee that AI answers are correct.</p>
+<h2 id="chats">2. Chat history on your device</h2>
+<p>Your conversation history is saved in your <strong>browser's local storage on this device</strong> so you can reopen past chats. This is not cloud sync. Chats will not appear automatically on another phone, browser or computer. Private or incognito browsing and clearing browser data may remove this history.</p>
+<p>Saved history can contain your messages, AI replies and selected extracted text from documents you shared. Conversation history stores attachment names and local preview references, rather than file bodies. When you send an attachment, a separate local IndexedDB record can retain readable text or a compressed image preview for up to 30 days, subject to browser storage limits. No conversation history is intentionally stored in our D1 database.</p>
+<h2 id="attachments">3. Documents and images</h2>
+<p>Text and code documents are read locally in the browser. Supported PDF files are processed to extract readable text in the browser, using a PDF reading library served by a third party. Extracted text is included with your request to the AI service. Files are limited in size and only part of each document is transmitted for an AI request. Local preview can display more extracted text than the AI receives.</p>
+<p>Images are resized and converted in your browser before being sent to an image-capable Workers AI model for analysis. Images are not added to public file storage or to our application database. Compressed previews may be stored locally in your browser, separately from chat history. Do not upload sensitive or confidential content.</p>
+<div class="policy-note"><strong>Important:</strong> Sending a message or attachment to AI involves transferring the selected content to the Cloudflare infrastructure used to process your request. We do not operate an independently trained AI model.</div>
+<h2 id="usage">4. Usage and security information</h2>
+<p>For guest access and abuse prevention, the service uses an anonymous signed session token stored in your browser, usage counters and keyed hashes derived from session or network identifiers. The application does not store raw IP addresses in its own D1 database. Old counters are routinely deleted after a short period.</p>
+<p>Cloudflare Turnstile helps verify that requests come from a person. It may collect technical information necessary for anti-bot checks. Application and infrastructure diagnostic logs may follow the infrastructure provider's separate retention rules.</p>
+<h2 id="providers">5. Services involved</h2>
+<ul>
+<li><strong>Cloudflare Workers and Workers AI</strong> run the server and process AI requests, including image analysis when used.</li>
+<li><strong>Cloudflare D1</strong> stores anonymous quota counters rather than chat transcripts.</li>
+<li><strong>Cloudflare Turnstile</strong> performs bot checks.</li>
+<li><strong>Firebase Hosting</strong> serves the web application.</li>
+<li><strong>PDF.js via cdnjs</strong> loads a browser PDF reader only when a PDF is selected.</li>
+<li><strong>Wikimedia Wikipedia</strong> may receive a search query when limited research is selected or requested. Zrain AI may also fetch a public page from a short allowlist if you provide its URL. Source excerpts can be sent to Workers AI as context.</li>
+</ul>
+<p>For additional information, see <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase privacy information</a>.</p>
+<h2 id="choices">6. Your controls and retention</h2>
+<p>When you open web links, you leave Zrain AI and the destination website has its own privacy practices. Code preview runs code within a sandboxed iframe with network access blocked. Do not paste private keys or confidential data into generated code.</p>
+<p>You can rename, delete, export or clear locally saved chats within Zrain AI. Deleting a conversation also removes its local attachment previews when available, and Clear all removes preview records from this app. Locally stored previews may be cleaned up automatically after 30 days. Clearing your browser data also removes locally stored chats and session information. Browser storage limits can cause old chats to be removed, and local history is not a backup service. We do not currently provide a cloud account or synchronized chat history.</p>
+<h2 id="contact">7. Contact and updates</h2>
+<p>Questions about Zrain AI privacy can be sent to <a href="mailto:zrain.dev@gmail.com">zrain.dev@gmail.com</a>. This policy may change as the app evolves, and we will update the date above when changes are published.</p>
+<div class="policy-note"><strong>Developed by Zrain.</strong> Made for people. Built with purpose.</div>
+</article></div>
+</main>
+<footer class="site-footer zrain-footer"><div class="footer-inner zrain-footer__inner"><div class="footer-brand zrain-footer__identity">  <a class="zrain-footer__home" href="https://zrain.web.app/" aria-label="Developed by Zrain. Open Zrain ecosystem home"><img class="brand-logo-image zrain-footer__logo" src="./zrain-logo.webp" width="38" height="38" alt=""><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a></div><div class="footer-links zrain-footer__links"><a href="./">Chat</a><a href="./terms.html">Terms</a><a href="mailto:zrain.dev@gmail.com">Contact</a></div></div></footer>
+</body></html>

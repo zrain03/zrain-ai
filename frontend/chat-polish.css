@@ -1,0 +1,159 @@
+/*
+ * Fail / File: frontend/chat-polish.css
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: Unknown / Belum disahkan (tiada Git history dalam ZIP asal)
+ * Dikemas kini / Last updated: 2026-11-04
+ * BM: Menggilap penampilan chat tanpa mengubah komposer dan aliran respons.
+ * EN: Polish the chat presentation without altering the composer or response flow.
+ */
+/* Zrain AI chat polish. Presentation only, the fixed composer, footer and quota remain intact. */
+body:not(.policy-body) .composer-wrap { background:linear-gradient(180deg,#fffdfbec,#fff9f5); }
+body:not(.policy-body) .composer {
+  border:1px solid #e7d2c5;
+  border-radius:20px;
+  padding:12px 13px 10px;
+  background:#fffdfb;
+  box-shadow:0 3px 7px #674e3b08,0 12px 32px #79533d0b;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+body:not(.policy-body) .composer:focus-within {
+  border-color:#c28d78;
+  box-shadow:0 0 0 3px #d29b7e24,0 9px 32px #79533d12;
+}
+body:not(.policy-body) .composer textarea {
+  min-height:30px;
+  line-height:1.58;
+  font-size:14px;
+  padding:1px 3px;
+}
+body:not(.policy-body) .composer textarea::placeholder { color:#8895a1;opacity:1; }
+body:not(.policy-body) .composer-row {gap:10px;min-width:0;align-items:flex-end;margin-top:9px;}
+body:not(.policy-body) .composer-actions {
+  display:flex;flex:1 1 auto;min-width:0;align-items:center;gap:8px;flex-wrap:wrap;
+}
+body:not(.policy-body) .composer-tip {
+  min-width:0;flex:1 1 190px;line-height:1.35;
+  color:#8d99a6;font-size:10px;
+}
+body:not(.policy-body) .attach-trigger,
+body:not(.policy-body) .research-toggle {
+  all:unset;box-sizing:border-box;
+  display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;gap:7px;
+  height:34px;min-height:34px;padding:0 12px;
+  border:1px solid #ecdbd0;border-radius:11px;
+  background:#fff7f1;color:#99543e;
+  font-family:inherit;font-size:11px;font-weight:750;line-height:1;
+  cursor:pointer;white-space:nowrap;
+  transition:background .15s ease,border-color .15s ease,transform .15s ease;
+}
+body:not(.policy-body) .attach-trigger:hover,
+body:not(.policy-body) .research-toggle:hover {
+  background:#faebe1;border-color:#deb7a2;
+}
+body:not(.policy-body) .attach-trigger:active,
+body:not(.policy-body) .research-toggle:active { transform:translateY(1px); }
+body:not(.policy-body) .attach-trigger svg,
+body:not(.policy-body) .research-toggle svg {flex:none;stroke-width:1.8;}
+body:not(.policy-body) .research-toggle.is-active,
+body:not(.policy-body) .research-toggle[aria-pressed="true"] {
+  color:#a34831;border-color:#dfad94;background:#fce8dc;
+  box-shadow:inset 0 0 0 1px #f7d7c5;
+}
+body:not(.policy-body) .research-status-dot {width:6px;height:6px;border-radius:50%;background:#b5b5b5;opacity:.55;flex:none;}
+body:not(.policy-body) .research-toggle.is-active .research-status-dot,
+body:not(.policy-body) .research-toggle[aria-pressed="true"] .research-status-dot {background:#2d956d;opacity:1;box-shadow:0 0 0 2px #a2dfc4aa;}
+body:not(.policy-body) .composer-row #send {
+  width:37px;height:37px;border-radius:12px;
+  background:#b94f33;box-shadow:0 5px 11px #a54a3129;
+}
+body:not(.policy-body) .composer-row #send:hover{background:#a9442b;}
+body:not(.policy-body) .attach-trigger:focus-visible,
+body:not(.policy-body) .research-toggle:focus-visible,
+body:not(.policy-body) .composer-row #send:focus-visible {
+  outline:3px solid #8dc7b6;outline-offset:2px;
+}
+body:not(.policy-body) .composer-quota{padding-top:7px;}
+@media(max-width:780px) {
+  body:not(.policy-body) .composer{padding:9px 11px 8px;border-radius:17px;}
+  body:not(.policy-body) .composer-row{gap:7px;margin-top:7px;}
+  body:not(.policy-body) .composer-actions{gap:6px;}
+  body:not(.policy-body) .attach-trigger,
+  body:not(.policy-body) .research-toggle{height:32px;min-height:32px;padding:0 10px;font-size:11px;gap:6px;}
+  body:not(.policy-body) .composer-tip{display:none;}
+}
+@media(max-width:370px) {
+  body:not(.policy-body) .attach-trigger,
+  body:not(.policy-body) .research-toggle{padding:0 8px;gap:5px;}
+  body:not(.policy-body) .composer-actions{gap:4px;}
+}
+@media(max-height:580px){
+  body:not(.policy-body) .composer{padding:7px 10px 6px;}
+  body:not(.policy-body) .composer-row{margin-top:5px;}
+  body:not(.policy-body) .attach-trigger,
+  body:not(.policy-body) .research-toggle{height:29px;min-height:29px;}
+  body:not(.policy-body) .composer-row #send{width:33px;height:33px;}
+  body:not(.policy-body) .composer-tip{display:none;}
+}
+@media(prefers-reduced-motion:reduce){
+  body:not(.policy-body) .composer,
+  body:not(.policy-body) .attach-trigger,
+  body:not(.policy-body) .research-toggle{transition:none;}
+}
+
+/* Code preview as a compact developer workspace with device sizes and a readable console. */
+.zrain-preview-dialog {
+  width:min(1120px,calc(100vw - 28px));
+  height:min(850px,calc(100dvh - 28px));
+  border:1px solid #e5d2c6;border-radius:22px;
+  background:#fffdfb;color:#23313f;
+  box-shadow:0 30px 120px #14212b66;
+  overflow:hidden;padding:0;
+}
+.zrain-preview-dialog[open]{display:flex;flex-direction:column;}
+.zrain-preview-dialog::backdrop{background:#14202db5;backdrop-filter:blur(4px);}
+.zrain-preview-head{display:flex;flex:none;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:12px;padding:13px 17px;background:#fff8f3;border-bottom:1px solid #efdfd4;min-height:72px;}
+.zrain-preview-identity{display:flex;align-items:center;gap:11px;min-width:0;}
+.zrain-preview-identity-icon{display:grid;place-items:center;flex:none;width:38px;height:38px;border:1px solid #eed4c5;border-radius:12px;background:#fae9df;color:#a74d35;font:800 12px/1 Consolas,monospace;}
+.zrain-preview-identity-copy{display:flex;flex-direction:column;gap:3px;min-width:0;}
+.zrain-preview-identity-copy strong{font-size:15px;letter-spacing:-.02em;}
+.zrain-preview-identity-copy span{font-size:11px;color:#7b8794;}
+.zrain-preview-head .zrain-preview-close{margin-left:auto;background:white;color:#94513d;border:1px solid #ead6c7;border-radius:10px;flex:none;padding:9px 12px;font-size:11px;font-weight:800;}
+.zrain-preview-head .zrain-preview-close:hover{background:#f9ebe2;}
+.zrain-preview-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;flex:none;min-height:54px;padding:9px 16px;border-bottom:1px solid #eadbd0;background:#fffdfb;}
+.zrain-preview-tabs,.zrain-preview-actions,.zrain-preview-devices{display:flex;align-items:center;gap:6px;}
+.zrain-preview-tabs,.zrain-preview-devices{background:#f8f1eb;padding:3px;border-radius:11px;}
+.zrain-preview-toolbar button{width:auto;height:auto;min-height:30px;padding:6px 11px;border:1px solid transparent;border-radius:9px;color:#647485;background:transparent;font-size:11px;font-weight:750;box-shadow:none;white-space:nowrap;}
+.zrain-preview-toolbar button:hover:not(:disabled){color:#995039;background:#fff9f5;}
+.zrain-preview-toolbar button.active,.zrain-preview-toolbar button[aria-selected="true"]{color:#a34933;background:#fff;border-color:#eadace;box-shadow:0 1px 4px #6d4c3b0e;}
+.zrain-preview-toolbar button:disabled{opacity:.5;cursor:default;}
+.zrain-preview-toolbar .zrain-preview-reload{border:1px solid #ead8cd;background:#fff7f1;color:#98513c;}
+.zrain-preview-stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:stretch;overflow:auto;padding:16px;background:#eef0f2;}
+.zrain-preview-device{flex:0 1 auto;min-height:100%;max-height:100%;overflow:hidden;border:1px solid #d8dee3;border-radius:12px;background:white;box-shadow:0 10px 32px #27374923;transition:width .18s ease;}
+.zrain-preview-device.is-desktop{width:100%;max-width:100%;}
+.zrain-preview-device.is-tablet{width:min(768px,100%);}
+.zrain-preview-device.is-mobile{width:min(390px,100%);}
+.zrain-preview-frame{display:block;width:100%;height:100%;border:0;background:white;}
+.zrain-preview-console-pane{flex:1;min-height:0;display:flex;flex-direction:column;background:#172830;color:#dceee7;}
+.zrain-preview-console-pane[hidden],.zrain-preview-stage[hidden]{display:none!important;}
+.zrain-preview-console-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none;padding:10px 15px;border-bottom:1px solid #39505b;}
+.zrain-preview-console-header strong{font-size:12px;color:#c8e6da;}
+.zrain-preview-console-header button{background:#29424c;border:1px solid #4a6268;border-radius:8px;padding:5px 10px;color:#dcf3e9;font-size:11px;}
+.zrain-preview-console{flex:1;min-height:0;margin:0;padding:17px;font:12px/1.7 Consolas,monospace;white-space:pre-wrap;overflow:auto;overflow-wrap:anywhere;background:transparent;color:#dbf1e6;}
+.zrain-preview-note{flex:none;margin:0;padding:9px 15px;background:#fffaf7;border-top:1px solid #eddfd7;color:#677988;font-size:10px;line-height:1.5;}
+@media(max-width:650px){
+  .zrain-preview-dialog{width:calc(100vw - 12px);height:calc(100dvh - 12px);border-radius:14px;}
+  .zrain-preview-head{padding:10px 12px;min-height:62px;}
+  .zrain-preview-identity-icon{width:32px;height:32px;}
+  .zrain-preview-identity-copy strong{font-size:13px;}
+  .zrain-preview-identity-copy span{font-size:10px;}
+  .zrain-preview-toolbar{gap:7px;padding:8px 10px;}
+  .zrain-preview-toolbar button{font-size:10px;padding:5px 8px;min-height:28px;}
+  .zrain-preview-stage{padding:9px;}
+  .zrain-preview-note{padding:7px 11px;font-size:9px;}
+}
+@media(max-width:400px){
+  .zrain-preview-identity-copy span{display:none;}
+  .zrain-preview-tabs,.zrain-preview-actions{width:100%;justify-content:space-between;}
+  .zrain-preview-actions{gap:5px;}
+  .zrain-preview-devices{flex:1;justify-content:space-evenly;}
+}

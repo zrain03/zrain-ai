@@ -1,0 +1,17 @@
+{
+  "name": "zrain-ai",
+  "version": "1.1.0-beta.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check worker/src/index.js && node --check frontend/app.js && node --check scripts/preflight.mjs && node --check scripts/configure.mjs && node scripts/check-provenance.mjs && node --test tests/*.test.mjs",
+    "setup:check": "node scripts/preflight.mjs",
+    "configure": "node scripts/configure.mjs",
+    "demo": "node demo-server.mjs",
+    "provenance": "node scripts/check-provenance.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

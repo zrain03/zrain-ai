@@ -1,0 +1,17 @@
+# Fail / File: .gitignore
+# Pembangun / Developer: Zrain
+# Dicipta / Created: Unknown / Belum disahkan (tiada Git history dalam ZIP asal)
+# Dikemas kini / Last updated: 2026-11-04
+# BM: Mengecualikan secrets serta cache sementara daripada repository.
+# EN: Exclude secrets and temporary caches from the repository.
+node_modules/
+.wrangler/
+.env*
+.dev.vars*
+*.log
+.DS_Store
+
+# BM: Cache hasil Firebase, bukan source projek.
+# EN: Generated Firebase cache, not project source.
+.firebase/
+frontend/.firebase/

@@ -1,0 +1,67 @@
+/*
+ * Fail / File: frontend/brand-integration.css
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: 2026-11-04
+ * Dikemas kini / Last updated: 2026-11-04
+ * BM: Penyesuai susun atur untuk @zrain/ui 1.0.0 dalam skrin chat ber-viewport tetap.
+ * EN: Layout adapter for @zrain/ui 1.0.0 inside the fixed-viewport chat experience.
+ * BM: Kekalkan Golden Reference pada halaman dasar; chat sahaja menggunakan saiz padat.
+ * EN: Preserve the Golden Reference on legal pages; only the chat shell uses compact sizing.
+ */
+/* BM: Kekalkan hierarchy nama produk pada satu baris tanpa mengubah butang chat.
+   EN: Keep the product hierarchy on one line without modifying chat buttons. */
+.zrain-header .zrain-header__inner { justify-content:space-between; }
+.zrain-header .zrain-brand { min-width:0; gap:8px; }
+.zrain-header .zrain-brand__home { min-width:0; }
+.zrain-header .zrain-brand__product { white-space:nowrap; }
+.zrain-header .top-actions { margin-left:auto; min-width:0; flex-shrink:0; }
+/* BM: Penyelarasan footer Golden Reference untuk ketinggian yang tersedia pada chat.
+   EN: Adapt the Golden Reference footer to the available chat-shell height. */
+body:not(.policy-body) > .zrain-footer { margin-top:0; padding:0; }
+body:not(.policy-body) > .zrain-footer .zrain-footer__inner { min-height:0; padding:0; }
+body:not(.policy-body) > .zrain-footer .zrain-footer__identity { min-width:0; }
+body:not(.policy-body) > .zrain-footer .zrain-footer__home { min-width:0; }
+body:not(.policy-body) > .zrain-footer .zrain-footer__logo { width:28px; height:28px; }
+body:not(.policy-body) > .zrain-footer .zrain-footer__copy { gap:1px; }
+body:not(.policy-body) > .zrain-footer .zrain-footer__copy strong { font-size:11px; }
+body:not(.policy-body) > .zrain-footer .zrain-footer__copy small { font-size:10px; }
+body:not(.policy-body) > .zrain-footer .zrain-footer__links { gap:14px; }
+/* BM: Halaman Privacy/Terms mengekalkan footer bersaiz penuh di hujung artikel.
+   EN: Privacy and Terms retain a full-height footer after article content. */
+.policy-body .zrain-footer { margin-top:30px; }
+.policy-body .zrain-footer .zrain-footer__inner { padding:22px 0; }
+/* BM: Mod telefon tidak membenarkan header dua baris yang akan menutup composer.
+   EN: Prevent a second header row on phones, which would steal space from the composer. */
+@media (max-width:780px) {
+  .zrain-header .zrain-header__inner { min-height:0; flex-wrap:nowrap; gap:8px; width:calc(100% - 24px); }
+  .zrain-header .zrain-brand { gap:5px; flex-shrink:1; }
+  .zrain-header .zrain-brand__home { gap:5px; }
+  .zrain-header .zrain-brand__logo { width:32px; height:32px; }
+  .zrain-header .zrain-brand__name { font-size:16px; }
+  .zrain-header .zrain-brand__product { font-size:14px; padding:0; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__inner { display:grid; width:calc(100% - 24px); grid-template-columns:1fr; grid-template-rows:26px 26px; align-content:center; justify-items:center; row-gap:0; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__logo { width:20px; height:20px; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__copy strong { font-size:10px; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__copy small { font-size:9px; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__links { justify-content:center; gap:13px; }
+}
+@media (max-width:520px) {
+  /* BM: Logo utama ialah pautan Ecosystem; sembunyikan pautan pendua untuk memberi ruang kepada tindakan chat.
+     EN: The main logo links to Ecosystem, so hide the duplicate text link to protect chat actions. */
+  body:not(.policy-body) .top-actions > .ecosystem-link { display:none; }
+  body:not(.policy-body) .zrain-header .mode-pill { max-width:88px; overflow:hidden; text-overflow:ellipsis; }
+}
+@media (max-width:780px) and (max-height:650px) {
+  body:not(.policy-body) > .zrain-footer .zrain-footer__inner { grid-template-rows:21px 21px; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__logo { width:18px; height:18px; }
+  /* BM: Paparkan tagline rasmi pada telefon rendah, tetapi ketatkan line-height supaya masih muat.
+     EN: Keep the official tagline on short phones, using compact line-height to fit. */
+  body:not(.policy-body) { grid-template-rows:50px minmax(0,1fr) 56px !important; }
+  body:not(.policy-body) > .zrain-footer { height:56px; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__inner { grid-template-rows:26px 26px; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__copy strong { line-height:1.15; }
+  body:not(.policy-body) > .zrain-footer .zrain-footer__copy small { display:block; line-height:1.2; }
+}
+@media (max-height:420px) and (min-width:781px) {
+  body:not(.policy-body) > .zrain-footer .zrain-footer__copy small { display:none; }
+}

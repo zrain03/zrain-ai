@@ -1,0 +1,119 @@
+<!doctype html>
+<!--
+  Fail / File: frontend/index.html
+  Pembangun / Developer: Zrain
+  Dicipta / Created: Unknown / Belum disahkan (tiada Git history dalam ZIP asal)
+  Dikemas kini / Last updated: 2026-11-04
+  BM: Menyusun aplikasi chat Zrain AI; header/footer menggunakan shared Zrain UI.
+  EN: Structure Zrain AI chat; the header/footer use shared Zrain UI.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff7f1">
+  <meta name="description" content="Zrain AI, a multilingual AI assistant. Made for people. Built with purpose.">
+  <title>Zrain AI | Developed by Zrain</title>
+  <link rel="icon" href="./zrain-logo.webp" type="image/webp">
+  <link rel="stylesheet" href="./style.css?ui=20261103g">
+  <link rel="stylesheet" href="./footer-layout.css?v=20261103" data-zrain-footer-fix="true">
+  <link rel="stylesheet" href="./research-preview.css?v=20261103-final">
+  <link rel="stylesheet" href="./chat-polish.css?v=20261103a">
+  <link rel="stylesheet" href="./zrain-ui/brand.css?v=20261104">
+  <link rel="stylesheet" href="./brand-integration.css?v=20261104">
+  <script type="module" src="./app.js?ui=20261103-final"></script>
+  <script type="module" src="./zrain-ui/brand-init.js?v=20261104"></script>
+</head>
+<body>
+  <a href="#chat" class="skip">Skip to chat</a>
+  <header class="site-header zrain-header">
+    <div class="header-inner zrain-header__inner">
+      <div class="brand zrain-brand">
+        <a class="zrain-brand__home" href="https://zrain.web.app/" aria-label="Zrain ecosystem home"><img class="brand-logo-image zrain-brand__logo" src="./zrain-logo.webp" width="42" height="42" alt=""><strong class="zrain-brand__name">Zrain</strong></a>
+        <a class="zrain-brand__product" href="./" aria-label="Zrain AI home">AI</a>
+      </div>
+      <div class="top-actions">
+        <span id="mode-pill" class="mode-pill">Connecting</span>
+        <button id="mobile-history" class="mobile-new-chat" type="button" aria-label="Open conversation history" title="Conversation history">☰</button>
+        <button id="mobile-new-chat" class="mobile-new-chat" type="button" aria-label="Start a new conversation" title="New conversation">＋</button>
+        <a class="ecosystem-link" href="https://zrain.web.app/">Ecosystem <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+  <button id="drawer-backdrop" class="drawer-backdrop" type="button" hidden aria-label="Close conversation history"></button>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Chat options">
+      <div class="sidebar-kicker">YOUR SPACE</div>
+      <button id="new-chat" class="new-chat" type="button" title="Start a new conversation"><span aria-hidden="true">＋</span> New conversation</button>
+      <div class="history-heading">
+        <span>RECENT CHATS</span>
+        <span class="history-local" title="Saved only in this browser">On this device</span>
+      </div>
+      <nav id="chat-history" class="chat-history" aria-label="Saved conversations">
+        <p class="history-empty">Your chats will appear here.</p>
+      </nav>
+      <div class="history-tools">
+        <button id="export-chats" type="button" title="Export local conversations as JSON">Export</button>
+        <button id="clear-chats" type="button" title="Delete all local conversations">Clear all</button>
+      </div>
+      <div class="sidebar-bottom">
+        <p id="quota-label">Checking free capacity...</p>
+        <div class="quota-track"><div id="quota-progress"></div></div>
+        <small id="shared-capacity">Shared free AI capacity may run out before your personal allowance.</small>
+      </div>
+    </aside>
+    <main id="chat" class="chat-shell">
+      <div id="conversation" class="conversation" role="log" aria-label="AI conversation" aria-live="polite">
+        <section id="welcome" class="welcome">
+          <div class="welcome-mark" aria-hidden="true"><img src="./zrain-logo.webp" width="38" height="38" alt="" onerror="this.onerror=null;this.src='https://zrain.web.app/zrain-logo.webp'"></div>
+          <div class="welcome-eyebrow">YOUR IDEAS START HERE</div>
+          <h1>Where shall we <span>begin?</span></h1>
+          <p>Ask a question, work through an idea, or simply have a conversation. In your language, at your pace.</p>
+          <div class="suggestions" aria-label="Example prompts">
+            <button type="button" data-suggest="Terangkan Java Spring Boot dalam Bahasa Melayu dengan contoh mudah."><span>📘</span><strong>Learn something</strong><small>Explore a concept in your language</small></button>
+            <button type="button" data-suggest="Help me understand and improve this JavaScript function."><span>⌘</span><strong>Help with coding</strong><small>Think through a programming problem</small></button>
+            <button type="button" data-suggest="Translate and explain this sentence in English and Bahasa Melayu: Nice to meet you."><span>🌐</span><strong>Language support</strong><small>Translate and explain naturally</small></button>
+            <button type="button" data-suggest="Suggest five creative ideas for a useful free web app."><span>✳</span><strong>Explore ideas</strong><small>Turn a spark into a plan</small></button>
+          </div>
+        </section>
+      </div>
+      <button id="scroll-latest" class="scroll-latest" type="button" hidden aria-label="Scroll to latest message" title="Latest message">↓ Latest</button>
+      <section class="composer-wrap" aria-label="Compose a message">
+        <div id="notice" class="notice" role="status" aria-live="polite"></div>
+        <div class="verification" aria-label="Human verification"><div id="turnstile-container"></div></div>
+        <div id="attachment-preview" class="attachment-preview" hidden aria-live="polite"></div>
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="message">Message for Zrain AI</label>
+          <textarea id="message" rows="1" maxlength="2000" placeholder="Message Zrain AI..."></textarea>
+          <div class="composer-row">
+            <div class="composer-actions">
+              <button id="attach-trigger" class="attach-trigger" type="button" title="Attach PDF, text, code or image" aria-label="Attach a document or image"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20.2 11.5-7.9 7.9a5 5 0 0 1-7.1-7.1l8.8-8.8a3.3 3.3 0 0 1 4.7 4.7l-8.8 8.8a1.6 1.6 0 0 1-2.3-2.3l7.9-7.9"/></svg><span>Attach</span></button>
+              <input id="attachment-file" type="file" hidden multiple accept=".pdf,.txt,.md,.csv,.json,.js,.ts,.tsx,.jsx,.py,.java,.html,.css,.xml,.log,.sql,.yaml,.yml,.sh,.ps1,image/png,image/jpeg,image/webp" aria-label="Choose documents or images">
+              <button id="research-toggle" class="research-toggle" type="button" aria-pressed="false" aria-label="Turn on web research" title="Research Wikipedia and supported public pages"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 4v13M4 10.5h13"/></svg><span class="research-label">Research</span><span class="research-status-dot" aria-hidden="true"></span></button>
+              <span class="composer-tip">Enter to send <span aria-hidden="true">·</span> Shift + Enter for new line</span></div>
+            <button id="send" type="submit" aria-label="Send message" title="Send message">↑</button>
+          </div>
+        </form>
+        <div class="composer-quota" role="status" aria-live="polite" aria-label="Message allowance">
+          <div class="composer-quota-labels">
+            <span id="quota-inline-label">Checking message allowance...</span>
+            <span id="shared-inline">Shared AI capacity is limited.</span>
+          </div>
+          <div class="composer-quota-track" role="progressbar" aria-label="Daily messages used" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="quota-progress-inline"></div>
+          </div>
+        </div>
+        <p class="disclaimer">Zrain AI may make mistakes. Research beta uses Wikipedia and approved public pages, not unrestricted web search. Chat history is saved only on this device. Files sent to AI are not stored on our server.</p>
+      </section>
+    </main>
+  </div>
+  <footer class="site-footer zrain-footer">
+    <div class="footer-inner zrain-footer__inner">
+      <div class="footer-brand zrain-footer__identity">
+        <a class="zrain-footer__home" href="https://zrain.web.app/" aria-label="Developed by Zrain. Open Zrain ecosystem home"><img class="brand-logo-image zrain-footer__logo" src="./zrain-logo.webp" width="38" height="38" alt=""><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a>
+      </div>
+      <div class="footer-links zrain-footer__links"><a href="https://zrain.web.app/">Zrain Ecosystem</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="mailto:zrain.dev@gmail.com">Contact</a></div>
+    </div>
+  </footer>
+</body>
+</html>

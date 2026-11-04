@@ -1,0 +1,39 @@
+# Fail / File: worker/wrangler.toml
+# Pembangun / Developer: Zrain
+# Dicipta / Created: Unknown / Belum disahkan (tiada Git history dalam ZIP asal)
+# Dikemas kini / Last updated: 2026-11-04
+# BM: Mengkonfigurasi Worker, D1, AI binding, asal request dan had operasi percuma.
+# EN: Configure Worker, D1, AI binding, allowed origins and free-tier limits.
+name = "zrain-ai-api"
+main = "src/index.js"
+compatibility_date = "2026-11-02"
+workers_dev = true
+
+[ai]
+binding = "AI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zrain-ai"
+database_id = "68042bd1-c2a8-4b64-b6c4-499e6528c0ac"
+migrations_dir = "migrations"
+
+[vars]
+# Replace when the frontend and Turnstile widget are ready.
+ALLOWED_ORIGINS = "https://zrain-ai.web.app"
+TURNSTILE_SITE_KEY = "0x4AAAAAAFwaRwEoZ9NbcvV4"
+TURNSTILE_HOSTNAMES = "zrain-ai.web.app"
+AI_MODEL = "@cf/qwen/qwen3-30b-a3b-fp8"
+DAILY_USER_LIMIT = "100"
+GLOBAL_DAILY_LIMIT = "250"
+DAILY_IP_LIMIT = "180"
+PER_MINUTE_VISITOR_LIMIT = "6"
+PER_MINUTE_IP_LIMIT = "15"
+MAX_OUTPUT_TOKENS = "1200"
+
+# Configure secrets with `npx wrangler secret put` (never put values here):
+# SESSION_SECRET
+# TURNSTILE_SECRET
+
+[triggers]
+crons = ["0 1 * * *"]

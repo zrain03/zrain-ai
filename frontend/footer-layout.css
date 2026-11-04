@@ -1,0 +1,128 @@
+/*
+ * Fail / File: frontend/footer-layout.css
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: Unknown / Belum disahkan (tiada Git history dalam ZIP asal)
+ * Dikemas kini / Last updated: 2026-11-04
+ * BM: Membahagikan viewport supaya chat, komposer dan footer kekal boleh digunakan.
+ * EN: Partition the viewport so chat, composer and footer remain usable.
+ */
+/* Zrain AI footer viewport correction, 2026-11-03.
+   A three-row shell keeps the footer, chat composer and quota visible.
+   Only conversation messages should scroll during normal use.
+   This stylesheet applies to the chat page only, not Privacy or Terms. */
+html:has(body:not(.policy-body)) {
+  height: 100%;
+  overflow: hidden;
+}
+body:not(.policy-body) {
+  display: grid !important;
+  grid-template-rows: 64px minmax(0, 1fr) 44px !important;
+  height: var(--app-height, 100dvh) !important;
+  min-height: 0 !important;
+  max-height: var(--app-height, 100dvh) !important;
+  overflow: hidden !important;
+}
+body:not(.policy-body) > .site-header {
+  grid-row: 1;
+  position: relative;
+  min-height: 0;
+  z-index: 5;
+}
+body:not(.policy-body) > .site-header .header-inner {
+  height: 100% !important;
+  min-height: 0;
+}
+body:not(.policy-body) > .layout {
+  grid-row: 2;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0 !important;
+  max-height: 100%;
+  height: 100% !important;
+  overflow: hidden !important;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+body:not(.policy-body) .chat-shell {
+  min-height: 0 !important;
+  max-height: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+body:not(.policy-body) .conversation {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+body:not(.policy-body) .composer-wrap {
+  bottom: 0;
+  max-width: 100%;
+}
+body:not(.policy-body) > .site-footer {
+  grid-row: 3;
+  position: relative;
+  z-index: 4;
+  display: block !important;
+  min-height: 0 !important;
+  height: 44px;
+  overflow: hidden;
+  background: #fff8f4;
+  border-top: 1px solid #eadbd0;
+}
+body:not(.policy-body) > .site-footer .footer-inner {
+  min-height: 0 !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0;
+}
+body:not(.policy-body) > .site-footer .footer-brand { min-width: 0; flex-shrink: 0; }
+body:not(.policy-body) > .site-footer .footer-brand img { width: 28px; height: 28px; }
+body:not(.policy-body) > .site-footer .footer-brand span { gap: 2px; }
+body:not(.policy-body) > .site-footer .footer-links { gap: 14px; justify-content: flex-end; }
+body:not(.policy-body) > .site-footer .footer-links a { white-space: nowrap; }
+
+/* A lower laptop window retains a compact, readable footer. */
+@media (max-height: 700px) and (min-width: 781px) {
+  body:not(.policy-body) { grid-template-rows: 56px minmax(0, 1fr) 36px !important; }
+  body:not(.policy-body) > .site-footer { height: 36px; }
+  body:not(.policy-body) > .site-footer .footer-brand img { width: 24px; height: 24px; }
+  body:not(.policy-body) > .site-footer .footer-brand small { font-size: 9px; }
+  body:not(.policy-body) > .layout { padding-top: 5px; padding-bottom: 5px; }
+}
+@media (max-width: 780px) {
+  body:not(.policy-body) { grid-template-rows: 58px minmax(0, 1fr) 56px !important; }
+  body:not(.policy-body) > .layout { width: 100%; padding: 0; }
+  body:not(.policy-body) > .site-footer { height: 56px; }
+  body:not(.policy-body) > .site-footer .footer-inner {
+    width: calc(100% - 24px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 26px 26px;
+    justify-items: center;
+    align-content: center;
+    row-gap: 0;
+  }
+  body:not(.policy-body) > .site-footer .footer-brand { gap: 5px; }
+  body:not(.policy-body) > .site-footer .footer-brand img { width: 20px; height: 20px; }
+  body:not(.policy-body) > .site-footer .footer-brand strong { font-size: 10px; }
+  body:not(.policy-body) > .site-footer .footer-brand small { font-size: 9px; }
+  body:not(.policy-body) > .site-footer .footer-links { gap: 13px; justify-content: center; }
+  body:not(.policy-body) > .site-footer .footer-links a { font-size: 10px; }
+}
+@media (max-width: 780px) and (max-height: 650px) {
+  body:not(.policy-body) { grid-template-rows: 50px minmax(0, 1fr) 46px !important; }
+  body:not(.policy-body) > .site-footer { height: 46px; }
+  body:not(.policy-body) > .site-footer .footer-inner { grid-template-rows: 21px 21px; }
+  body:not(.policy-body) > .site-footer .footer-brand img { width: 18px; height: 18px; }
+  body:not(.policy-body) > .site-footer .footer-brand small { display: none; }
+  body:not(.policy-body) > .site-footer .footer-links a { font-size: 9px; }
+}
+@media (max-height: 420px) and (min-width: 781px) {
+  body:not(.policy-body) { grid-template-rows: 46px minmax(0, 1fr) 32px !important; }
+  body:not(.policy-body) > .site-footer { height: 32px; }
+  body:not(.policy-body) > .site-footer .footer-brand small { display: none; }
+}
