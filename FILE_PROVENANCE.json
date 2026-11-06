@@ -20,7 +20,7 @@
       "developer": "Zrain",
       "created": "2026-11-04",
       "created_basis": "created in the engineering repair",
-      "last_updated": "2026-11-05",
+      "last_updated": "2026-11-06",
       "purpose_bm": "Inventori semua fail projek termasuk registry ini tanpa hash kendiri.",
       "purpose_en": "Inventory of all project files including this registry without self-hashing.",
       "source": "Created in the 2026-11-04 engineering repair",
@@ -200,7 +200,7 @@
       "developer": "Zrain",
       "created": null,
       "created_basis": "not independently verifiable from the supplied ZIP; original Git history absent",
-      "last_updated": "2026-11-05",
+      "last_updated": "2026-11-06",
       "purpose_bm": "Menyusun aplikasi chat Zrain AI; header/footer menggunakan shared Zrain UI.",
       "purpose_en": "Structure Zrain AI chat; the header/footer use shared Zrain UI.",
       "source": "zrain-ai.zip",
@@ -595,6 +595,16 @@
       "purpose_en": "Configure Worker, D1, AI binding, allowed origins and free-tier limits.",
       "source": "zrain-ai.zip",
       "role": "project source"
+    },
+    "frontend/community.html": {
+      "developer": "Zrain",
+      "created": "2026-11-06",
+      "created_basis": "new page created for Community integration",
+      "last_updated": "2026-11-06",
+      "purpose_bm": "Halaman komen rasmi khusus untuk Zrain AI.",
+      "purpose_en": "Dedicated official Zrain AI Community page.",
+      "source": "Community coverage release 2026-11-06",
+      "role": "public frontend page"
     }
   }
 }
