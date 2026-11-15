@@ -605,6 +605,16 @@
       "purpose_en": "Dedicated official Zrain AI Community page.",
       "source": "Community coverage release 2026-11-06",
       "role": "public frontend page"
+    },
+    "frontend/zrain-chat-mascot.webp": {
+      "developer": "Zrain",
+      "created": "2026-11-16",
+      "created_basis": "Original mascot artwork reused from Zrain UI V4.5.14",
+      "last_updated": "2026-11-16",
+      "purpose_bm": "Maskot sambutan Zrain AI.",
+      "purpose_en": "Original mascot for the Zrain AI welcome screen.",
+      "source": "Zrain UI V4.5.14",
+      "role": "public image asset"
     }
   }
 }
