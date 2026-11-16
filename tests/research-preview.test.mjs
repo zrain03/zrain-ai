@@ -125,7 +125,7 @@ test('Frontend adds research toggle and secure source panels without altering ch
   assert.match(app,/researchStatus: result\.researchStatus/);
   assert.match(app,/target = "_blank"/);
   assert.match(css,/zrain-preview-dialog/);
-  assert.match(html,/footer-layout\.css/);
+  assert.match(html,/chat-studio\.css/);
   assert.match(html,/id="quota-inline-label"/);
 });
 

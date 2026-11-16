@@ -1,0 +1,57 @@
+/*
+ * Fail / File: frontend/chat-studio.css
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: 2026-11-16
+ * Dikemas kini / Last updated: 2026-11-16
+ * BM: Susun atur perbualan Zrain AI.
+ * EN: Zrain AI conversation layout.
+ */
+html:has(.zrain-ai-workspace), body:has(.zrain-ai-workspace) {
+  display: block; height: auto; max-height: none; min-height: 100dvh; overflow: visible;
+}
+.zrain-ai-workspace {
+  --chat-paper: #fcf1e3; --chat-ink: #40212c; --chat-line: #dec4ae;
+  width: min(100% - 24px, 820px); margin: 12px auto 0;
+  color: var(--chat-ink); background: var(--chat-paper);
+  border: 1px solid var(--chat-line); border-radius: 22px;
+}
+.zrain-ai-workspace .chat-toolbar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  padding: 12px clamp(10px, 3vw, 24px); background: #ecd5ba;
+  border-radius: 21px 21px 0 0; border-bottom: 1px solid var(--chat-line);
+}
+.chat-title { font-size: 1rem; font-weight: 800; margin-inline-end: auto; }
+.chat-toolbar button { min-height: 36px; padding: 5px 10px; border: 1px solid #b08374; border-radius: 9px; background: #fcf1e3; color: inherit; font-weight: 700; }
+.chat-toolbar #mobile-new-chat { background: #632c3d; color: #fff5e8; border-color: #632c3d; }
+.zrain-ai-workspace .layout { display: block; width: auto; padding: 0; height: auto; overflow: visible; }
+.zrain-ai-workspace .chat-shell { height: auto; max-height: none; min-height: 0; background: none; border: 0; overflow: visible; border-radius: 0; box-shadow: none; }
+.zrain-ai-workspace .conversation {
+  position: static; height: clamp(250px, 55dvh, 620px); padding: 18px clamp(12px, 5vw, 56px);
+  background: radial-gradient(ellipse at 50% 35%, #f3d6b8, var(--chat-paper) 73%);
+}
+.zrain-ai-workspace .conversation:has(#welcome:not([hidden])) { height: auto; min-height: 0; overflow: visible; }
+.zrain-ai-workspace .welcome { margin: 0 auto; padding: 2px 0; }
+.zrain-ai-workspace .welcome-mark {
+  --mascot-size: clamp(105px, 18vw, 148px); width: var(--mascot-size); height: var(--mascot-size);
+  margin: 0 auto 8px; border: 0; border-radius: 50%; overflow: visible;
+  transform: none; box-shadow: none; background: #e9c29c;
+}
+.zrain-ai-workspace .welcome-mark img { width: calc(var(--mascot-size) * .9); height: calc(var(--mascot-size) * .9); transform: none; object-fit: contain; }
+.zrain-ai-workspace .welcome h1 { font-size: clamp(28px, 4vw, 42px); color: inherit; margin: 0; }
+.zrain-ai-workspace .welcome > p { color: #6d4e45; margin: 6px auto 12px; }
+.zrain-ai-workspace .suggestions { display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; }
+.zrain-ai-workspace .suggestions button { display: inline-flex; align-items: center; text-align: center; gap: 5px; width: auto; min-height: 34px; padding: 4px 9px; border-radius: 15px; background: #fff8ee; border: 1px solid #dec4ae; }
+.zrain-ai-workspace .suggestions button span { width: auto; height: auto; margin: 0; background: none; }
+.zrain-ai-workspace .suggestions button small { display: none; }
+body .zrain-ai-workspace .composer-wrap { position: relative; inset: auto; padding: 8px clamp(10px, 4vw, 36px) 12px; background: #f2dfc9; border-radius: 0 0 21px 21px; border-color: var(--chat-line); box-shadow: none; }
+.zrain-ai-workspace .scroll-latest { bottom: auto; top: calc(clamp(250px, 55dvh, 620px) - 45px); }
+.zrain-ai-workspace .chat-policies { display: flex; justify-content: center; gap: 14px; font-size: .75rem; }
+.chat-policies a { color: #663346; }
+.zrain-ai-workspace .sidebar {
+  display: none; position: fixed; inset: 0 auto 0 0; z-index: 95;
+  width: min(340px, 88vw); height: 100dvh; max-height: 100dvh; overflow: auto;
+  border-radius: 0 18px 18px 0; background: var(--chat-paper); transform: none;
+}
+.zrain-ai-workspace .sidebar.drawer-open { display: flex; }
+body > .drawer-backdrop:not([hidden]) { display: block; position: fixed; inset: 0; z-index: 94; width: 100%; height: 100%; background: #251019a0; border: 0; border-radius: 0; }
+@media (max-width: 400px) { .chat-toolbar .mode-pill { font-size: .65rem; padding: 4px 6px; } }

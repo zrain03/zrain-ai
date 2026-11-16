@@ -12,13 +12,10 @@ import { readFile } from "node:fs/promises";
 const root = new URL("../frontend/", import.meta.url);
 test("Zrain AI mounts the Golden Reference identity and retains its official logo", async () => {
   const html = await readFile(new URL("index.html", root), "utf8");
-  const mount = await readFile(new URL("zrain-ui/brand-init.js", root), "utf8");
-  assert.match(html, /class="site-header zrain-header"/);
-  assert.match(html, /class="brand zrain-brand"/);
-  assert.match(html, /class="zrain-brand__product"[^>]*>AI<\/a>/);
-  assert.match(html, /class="welcome-mark"[^>]*>[\s\S]*?zrain-logo\.webp/);
-  assert.match(html, /class="zrain-footer__home"[^>]*>[\s\S]*?Developed by Zrain/);
-  assert.match(mount, /mountZrainUI\(\{ product: "AI", logoSrc: "\.\/zrain-logo\.webp"/);
+  assert.match(html, /https:\/\/zrain\.web\.app\/ui\/v2\/layout\.js/);
+  assert.match(html, /data-product="zrain-ai"/);
+  assert.match(html, /class="welcome-mark"[^>]*>[\s\S]*?zrain-chat-mascot\.webp/);
+  assert.doesNotMatch(html, /<footer/);
   assert.doesNotMatch(html, /✦/);
 });
 test("Zrain AI chat avatar uses the brand logo, not a generic star", async () => {

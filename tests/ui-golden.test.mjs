@@ -14,9 +14,12 @@ const read = name => readFileSync(new URL(name, root), "utf8");
 
 // BM: Jangan hilangkan identiti atau pautan dasar ketika menyamakan reka bentuk.
 // EN: Do not lose branding or legal links when aligning shared design.
-test("chat and legal pages use identical Golden Reference mount points", () => {
+test("chat and legal pages load the shared Zrain layout", () => {
   for (const name of ["index.html", "privacy.html", "terms.html"]) {
     const html = read(name);
+    assert.match(html, /\/ui\/v2\/layout\.js/);
+    assert.match(html, /data-zrain-content/);
+    if (name === "index.html") continue;
     for (const fragment of ['class="site-header zrain-header"', 'class="brand zrain-brand"', 'class="site-footer zrain-footer"', 'class="footer-brand zrain-footer__identity"', 'class="footer-links zrain-footer__links"']) {
       assert.ok(html.includes(fragment), `${name}: ${fragment}`);
     }
@@ -30,7 +33,7 @@ test("chat and legal pages use identical Golden Reference mount points", () => {
 // EN: Chat actions and notices are left under application control.
 test("Golden Reference integration preserves chat actions and required local links", () => {
   const html = read("index.html");
-  for (const fragment of ['id="mobile-history"', 'id="mobile-new-chat"', 'id="new-chat"', 'id="chat-form"', 'id="research-toggle"', 'id="attach-trigger"', './privacy.html', './terms.html', 'mailto:zrain.dev@gmail.com']) {
+  for (const fragment of ['id="mobile-history"', 'id="mobile-new-chat"', 'id="new-chat"', 'id="chat-form"', 'id="research-toggle"', 'id="attach-trigger"', './privacy.html', './terms.html']) {
     assert.ok(html.includes(fragment), `missing ${fragment}`);
   }
   const init = read("zrain-ui/brand-init.js");

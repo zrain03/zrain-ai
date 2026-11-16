@@ -136,6 +136,16 @@
       "source": "Created in the 2026-11-04 engineering repair",
       "role": "project source"
     },
+    "frontend/chat-studio.css": {
+      "developer": "Zrain",
+      "created": "2026-11-16",
+      "created_basis": "introduced in this redesign",
+      "last_updated": "2026-11-16",
+      "purpose_bm": "Susun atur perbualan Zrain AI.",
+      "purpose_en": "Zrain AI conversation layout.",
+      "source": "Zrain AI chat redesign",
+      "role": "chat workspace stylesheet"
+    },
     "frontend/chat-polish.css": {
       "developer": "Zrain",
       "created": null,

@@ -16,32 +16,24 @@
   <title>Zrain AI | Developed by Zrain</title>
   <link rel="icon" href="./zrain-logo.webp" type="image/webp">
   <link rel="stylesheet" href="./style.css?ui=20261103g">
-  <link rel="stylesheet" href="./footer-layout.css?v=20261103" data-zrain-footer-fix="true">
   <link rel="stylesheet" href="./research-preview.css?v=20261103-final">
   <link rel="stylesheet" href="./chat-polish.css?v=20261103a">
   <link rel="stylesheet" href="./zrain-ui/brand.css?v=20261104">
-  <link rel="stylesheet" href="./brand-integration.css?v=20261104">
+  <link rel="stylesheet" href="./chat-studio.css">
   <script type="module" src="./app.js?ui=20261103-final"></script>
-  <script type="module" src="./zrain-ui/brand-init.js?v=20261104"></script>
-<style>.zrain-ai-workspace>.top-actions{display:flex;justify-content:flex-end;gap:8px;padding:10px 16px}.zrain-ai-workspace .welcome-mark{width:128px;height:128px;margin:0 auto 12px;background:none;border:0;box-shadow:none}.zrain-ai-workspace .welcome-mark img{width:100%;height:100%;object-fit:contain}.zrain-ai-workspace{min-width:0;width:100%}</style></head>
+</head>
 <body>
   <a href="#chat" class="skip">Skip to chat</a>
-  <header data-zrain-legacy class="site-header zrain-header">
-    <div class="header-inner zrain-header__inner">
-      <div class="brand zrain-brand">
-        <a class="zrain-brand__home" href="https://zrain.web.app/" aria-label="Zrain ecosystem home"><img class="brand-logo-image zrain-brand__logo" src="./zrain-logo.webp" width="42" height="42" alt=""><strong class="zrain-brand__name">Zrain</strong></a>
-        <a class="zrain-brand__product" href="./" aria-label="Zrain AI home">AI</a>
-      </div>
-      
-    </div>
-  </header>
+
   <button id="drawer-backdrop" class="drawer-backdrop" type="button" hidden aria-label="Close conversation history"></button>
-  <div data-zrain-content class="zrain-ai-workspace"><div class="top-actions">
-        <span id="mode-pill" class="mode-pill">Connecting</span>
-        <button id="mobile-history" class="mobile-new-chat" type="button" aria-label="Open conversation history" title="Conversation history">☰</button>
-        <button id="mobile-new-chat" class="mobile-new-chat" type="button" aria-label="Start a new conversation" title="New conversation">＋</button>
-        
-      </div><div class="layout">
+  <div data-zrain-content class="zrain-ai-workspace">
+    <div class="chat-toolbar">
+      <span class="chat-title">Zrain AI</span>
+      <span id="mode-pill" class="mode-pill" role="status">Connecting</span>
+      <button id="mobile-history" type="button" aria-label="Open conversation history">History</button>
+      <button id="mobile-new-chat" type="button" aria-label="Start a new conversation">＋ New chat</button>
+    </div>
+    <div class="layout">
     <aside class="sidebar" aria-label="Chat options">
       <div class="sidebar-kicker">YOUR SPACE</div>
       <button id="new-chat" class="new-chat" type="button" title="Start a new conversation"><span aria-hidden="true">＋</span> New conversation</button>
@@ -66,9 +58,8 @@
       <div id="conversation" class="conversation" role="log" aria-label="AI conversation" aria-live="polite">
         <section id="welcome" class="welcome">
           <div class="welcome-mark" aria-hidden="true"><img src="./zrain-chat-mascot.webp" width="128" height="128" alt=""></div>
-          <div class="welcome-eyebrow">YOUR IDEAS START HERE</div>
-          <h1>Where shall we <span>begin?</span></h1>
-          <p>Ask Zrain a question or work through an idea together.</p>
+          <h1>Hi, I’m Zrain<span>.</span></h1>
+          <p>What are we figuring out today?</p>
           <div class="suggestions" aria-label="Example prompts">
             <button type="button" data-suggest="Terangkan Java Spring Boot dalam Bahasa Melayu dengan contoh mudah."><span>📘</span><strong>Learn something</strong><small>Explore a concept in your language</small></button>
             <button type="button" data-suggest="Help me understand and improve this JavaScript function."><span>⌘</span><strong>Help with coding</strong><small>Think through a programming problem</small></button>
@@ -90,7 +81,7 @@
               <button id="attach-trigger" class="attach-trigger" type="button" title="Attach PDF, text, code or image" aria-label="Attach a document or image"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20.2 11.5-7.9 7.9a5 5 0 0 1-7.1-7.1l8.8-8.8a3.3 3.3 0 0 1 4.7 4.7l-8.8 8.8a1.6 1.6 0 0 1-2.3-2.3l7.9-7.9"/></svg><span>Attach</span></button>
               <input id="attachment-file" type="file" hidden multiple accept=".pdf,.txt,.md,.csv,.json,.js,.ts,.tsx,.jsx,.py,.java,.html,.css,.xml,.log,.sql,.yaml,.yml,.sh,.ps1,image/png,image/jpeg,image/webp" aria-label="Choose documents or images">
               <button id="research-toggle" class="research-toggle" type="button" aria-pressed="false" aria-label="Turn on web research" title="Research Wikipedia and supported public pages"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 4v13M4 10.5h13"/></svg><span class="research-label">Research</span><span class="research-status-dot" aria-hidden="true"></span></button>
-              <span class="composer-tip">Enter to send <span aria-hidden="true">·</span> Shift + Enter for new line</span></div>
+            </div>
             <button id="send" type="submit" aria-label="Send message" title="Send message">↑</button>
           </div>
         </form>
@@ -104,17 +95,11 @@
           </div>
         </div>
         <p class="disclaimer">Zrain AI may make mistakes. Research beta uses Wikipedia and approved public pages, not unrestricted web search. Chat history is saved only on this device. Files sent to AI are not stored on our server.</p>
+        <div class="chat-policies"><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a></div>
       </section>
     </main>
   </div>
   </div>
-  <footer data-zrain-legacy class="site-footer zrain-footer">
-    <div class="footer-inner zrain-footer__inner">
-      <div class="footer-brand zrain-footer__identity">
-        <a class="zrain-footer__home" href="https://zrain.web.app/" aria-label="Developed by Zrain. Open Zrain ecosystem home"><img class="brand-logo-image zrain-footer__logo" src="./zrain-logo.webp" width="38" height="38" alt=""><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a>
-      </div>
-      <div class="footer-links zrain-footer__links"><a href="https://zrain.web.app/">Zrain Ecosystem</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="mailto:zrain.dev@gmail.com">Contact</a> <a href="./community.html">Community</a></div>
-    </div>
-  </footer>
-<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-ai" data-menu='[{"label":"Ecosystem","href":"https://zrain.web.app/"},{"label":"Chat","href":"#chat"},{"label":"Community","href":"./community.html"}]'></script></body>
+
+<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-ai" data-menu='[{"label":"Chat","href":"#chat"},{"label":"Feedback","href":"./community.html"}]'></script></body>
 </html>
