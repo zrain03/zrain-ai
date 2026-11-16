@@ -20,3 +20,13 @@ test('The chat uses the shared footer without clipping the composer', () => {
   assert.match(css, /\.composer-wrap\s*\{\s*position: relative/);
   assert.match(css, /\.welcome-mark[^}]*height: var\(--mascot-size\)/);
 });
+
+
+test('Feedback stays within the AI workspace and uses its own discussion', () => {
+  const menu = JSON.parse(html.match(/data-menu='([^']+)'/)[1]);
+  assert.deepEqual(menu.map(item => item.href), ['#chat', '#zrain-feedback']);
+  assert.match(html, /data-feedback-href="#zrain-feedback"/);
+  assert.match(html, /id="zrain-feedback"[^>]*>[\s\S]*?id="zrain-ai-discussion"/);
+  assert.match(html, /embed\.js" data-product="zrain-ai" data-target="#zrain-ai-discussion"/);
+  assert.match(css, /\.zrain-ai-feedback:target/);
+});

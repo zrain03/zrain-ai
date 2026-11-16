@@ -19,11 +19,12 @@
   <link rel="stylesheet" href="./research-preview.css?v=20261103-final">
   <link rel="stylesheet" href="./chat-polish.css?v=20261103a">
   <link rel="stylesheet" href="./zrain-ui/brand.css?v=20261104">
-  <link rel="stylesheet" href="./chat-studio.css?v=history-dialog-20261116">
+  <link rel="stylesheet" href="./chat-studio.css?v=inline-feedback-20261116">
   <script type="module" src="./app.js?ui=history-dialog-20261116"></script>
 </head>
 <body>
-  <a href="#chat" class="skip">Skip to chat</a>
+  <a href="#chat" class="skip skip-chat">Skip to chat</a>
+  <a href="#zrain-feedback" class="skip skip-feedback">Skip to feedback</a>
 
   <dialog id="history-drawer" aria-labelledby="history-title">
     <aside class="sidebar">
@@ -102,8 +103,13 @@
         <nav class="zr-policy-links" aria-label="Zrain AI policies"><img src="https://zrain.web.app/zrain-mascot.png" width="24" height="24" alt=""><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a></nav>
       </section>
     </main>
+    </div>
+    <main id="zrain-feedback" class="zrain-ai-feedback" aria-labelledby="feedback-title">
+      <h1 id="feedback-title">Zrain AI feedback</h1>
+      <section id="zrain-ai-discussion" aria-label="Zrain AI discussion"></section>
+    </main>
   </div>
-  </div>
+  <script defer src="https://zrain-community.web.app/embed.js" data-product="zrain-ai" data-target="#zrain-ai-discussion"></script>
 
-<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-ai" data-feedback-href="./community.html#zrain-feedback" data-menu='[{"label":"Chat","href":"#chat"},{"label":"Feedback","href":"./community.html#zrain-feedback"}]'></script></body>
+<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-ai" data-feedback-href="#zrain-feedback" data-menu='[{"label":"Chat","href":"#chat"},{"label":"Feedback","href":"#zrain-feedback"}]'></script></body>
 </html>

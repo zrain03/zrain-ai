@@ -62,3 +62,13 @@ body .zrain-ai-workspace .composer-wrap { position: relative; inset: auto; paddi
 .history-drawer-heading h2 { margin: 0; font-size: 1.15rem; }
 #history-close { width: 40px; height: 40px; border: 1px solid #dec4ae; border-radius: 10px; background: #fff7ec; color: #542837; font-size: 1.35rem; cursor: pointer; }
 @media (max-width: 400px) { .chat-toolbar .mode-pill { font-size: .65rem; padding: 4px 6px; } }
+
+
+#chat, .zrain-ai-feedback { scroll-margin-top: 19rem; }
+.zrain-ai-feedback { display: none; padding: clamp(12px, 3vw, 22px); }
+.zrain-ai-feedback:target { display: block; }
+.zrain-ai-workspace:has(.zrain-ai-feedback:target) > :is(.chat-toolbar, .layout) { display: none; }
+.skip-feedback, body:has(.zrain-ai-feedback:target) .skip-chat { display: none; }
+body:has(.zrain-ai-feedback:target) .skip-feedback { display: block; }
+.zrain-ai-feedback h1 { margin: 0 0 10px; font-size: clamp(1.125rem, 3vw, 1.5rem); }
+.zrain-ai-feedback iframe { border-radius: 12px; }
