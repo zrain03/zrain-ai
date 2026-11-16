@@ -28,7 +28,7 @@ const ui = {
   inlineQuota: el("quota-inline-label"), inlineProgress: el("quota-progress-inline"),
   inlineShared: el("shared-inline"), mode: el("mode-pill"), latest: el("scroll-latest"),
   history: el("chat-history"), file: el("attachment-file"), filePreview: el("attachment-preview"),
-  sidebar: document.querySelector(".sidebar"), backdrop: el("drawer-backdrop"),
+  drawer: el("history-drawer"),
   researchToggle: el("research-toggle")
 };
 // BM: Bina URL endpoint berasaskan konfigurasi Worker semasa.
@@ -259,14 +259,12 @@ function setPending(pending) {
 // BM: Tutup sidebar sejarah mobile dan pulihkan keadaan overlay.
 // EN: Close mobile history and reset its backdrop.
 function closeDrawer() {
-  ui.sidebar.classList.remove("drawer-open");
-  ui.backdrop.hidden = true;
+  if (ui.drawer.open) ui.drawer.close();
 }
 // BM: Paparkan sejarah perbualan mobile tanpa mengubah data chat.
 // EN: Open mobile chat history without modifying conversation data.
 function openDrawer() {
-  ui.sidebar.classList.add("drawer-open");
-  ui.backdrop.hidden = false;
+  if (!ui.drawer.open) ui.drawer.showModal();
 }
 
 // BM: Bina senarai perbualan daripada sejarah tempatan yang telah disanitasi.
@@ -654,8 +652,8 @@ ui.latest.addEventListener("click", () => scrollToLatest("smooth"));
 el("new-chat").addEventListener("click", newChat);
 el("mobile-new-chat").addEventListener("click", newChat);
 el("mobile-history").addEventListener("click", openDrawer);
-ui.backdrop.addEventListener("click", closeDrawer);
-document.addEventListener("keydown", event => { if (event.key === "Escape") closeDrawer(); });
+el("history-close").addEventListener("click", closeDrawer);
+ui.drawer.addEventListener("click", event => { if (event.target === ui.drawer) closeDrawer(); });
 el("attach-trigger").addEventListener("click", () => { if (!ui.file.disabled) ui.file.click(); });
 ui.file.addEventListener("change", event => loadAttachment(event.target.files));
 // Zrain upload convention: Choose file, drag/drop and image paste from clipboard.

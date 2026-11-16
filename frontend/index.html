@@ -19,23 +19,18 @@
   <link rel="stylesheet" href="./research-preview.css?v=20261103-final">
   <link rel="stylesheet" href="./chat-polish.css?v=20261103a">
   <link rel="stylesheet" href="./zrain-ui/brand.css?v=20261104">
-  <link rel="stylesheet" href="./chat-studio.css">
-  <script type="module" src="./app.js?ui=20261103-final"></script>
+  <link rel="stylesheet" href="./chat-studio.css?v=history-dialog-20261116">
+  <script type="module" src="./app.js?ui=history-dialog-20261116"></script>
 </head>
 <body>
   <a href="#chat" class="skip">Skip to chat</a>
 
-  <button id="drawer-backdrop" class="drawer-backdrop" type="button" hidden aria-label="Close conversation history"></button>
-  <div data-zrain-content class="zrain-ai-workspace">
-    <div class="chat-toolbar">
-      <span class="chat-title">Zrain AI</span>
-      <span id="mode-pill" class="mode-pill" role="status">Connecting</span>
-      <button id="mobile-history" type="button" aria-label="Open conversation history">History</button>
-      <button id="mobile-new-chat" type="button" aria-label="Start a new conversation">＋ New chat</button>
-    </div>
-    <div class="layout">
-    <aside class="sidebar" aria-label="Chat options">
-      <div class="sidebar-kicker">YOUR SPACE</div>
+  <dialog id="history-drawer" aria-labelledby="history-title">
+    <aside class="sidebar">
+      <div class="history-drawer-heading">
+        <h2 id="history-title">Chat history</h2>
+        <button id="history-close" type="button" aria-label="Close chat history" autofocus>×</button>
+      </div>
       <button id="new-chat" class="new-chat" type="button" title="Start a new conversation"><span aria-hidden="true">＋</span> New conversation</button>
       <div class="history-heading">
         <span>RECENT CHATS</span>
@@ -54,6 +49,15 @@
         <small id="shared-capacity">Shared free AI capacity may run out before your personal allowance.</small>
       </div>
     </aside>
+  </dialog>
+  <div data-zrain-content class="zrain-ai-workspace">
+    <div class="chat-toolbar">
+      <span class="chat-title">Zrain AI</span>
+      <span id="mode-pill" class="mode-pill" role="status">Connecting</span>
+      <button id="mobile-history" type="button" aria-haspopup="dialog" aria-controls="history-drawer" aria-label="Open conversation history">History</button>
+      <button id="mobile-new-chat" type="button" aria-label="Start a new conversation">＋ New chat</button>
+    </div>
+    <div class="layout">
     <main id="chat" class="chat-shell">
       <div id="conversation" class="conversation" role="log" aria-label="AI conversation" aria-live="polite">
         <section id="welcome" class="welcome">
@@ -95,11 +99,11 @@
           </div>
         </div>
         <p class="disclaimer">Zrain AI may make mistakes. Research beta uses Wikipedia and approved public pages, not unrestricted web search. Chat history is saved only on this device. Files sent to AI are not stored on our server.</p>
-        <div class="chat-policies"><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a></div>
+        <nav class="zr-policy-links" aria-label="Zrain AI policies"><img src="https://zrain.web.app/zrain-mascot.png" width="24" height="24" alt=""><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a></nav>
       </section>
     </main>
   </div>
   </div>
 
-<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-ai" data-menu='[{"label":"Chat","href":"#chat"},{"label":"Feedback","href":"./community.html"}]'></script></body>
+<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-ai" data-feedback-href="./community.html#zrain-feedback" data-menu='[{"label":"Chat","href":"#chat"},{"label":"Feedback","href":"./community.html#zrain-feedback"}]'></script></body>
 </html>

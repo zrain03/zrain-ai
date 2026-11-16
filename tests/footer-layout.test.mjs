@@ -13,7 +13,7 @@ const here = new URL('../frontend/', import.meta.url);
 const html = readFileSync(new URL('index.html', here), 'utf8');
 const css = readFileSync(new URL('chat-studio.css', here), 'utf8');
 test('The chat uses the shared footer without clipping the composer', () => {
-  assert.match(html, /href="\.\/chat-studio\.css"/);
+  assert.match(html, /href="\.\/chat-studio\.css(?:\?[^"]*)?"/);
   assert.match(html, /\/ui\/v2\/layout\.js/);
   assert.doesNotMatch(html, /<footer|footer-layout\.css/);
   assert.match(css, /html:has\(\.zrain-ai-workspace\)[^}]*height: auto[^}]*overflow: visible/);
