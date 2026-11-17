@@ -12,4 +12,4 @@ import { mountZrainUI } from "./zrain-ui.js";
 // EN: Leave the application's history, new-chat and API-status controls untouched.
 // BM: Footer mengekalkan pautan Chat, Privacy, Terms dan Contact mengikut setiap halaman.
 // EN: Preserve each page's own Chat, Privacy, Terms and Contact footer links.
-mountZrainUI({ product: "AI", logoSrc: "./zrain-logo.webp", productHref: "./" });
+mountZrainUI({ product: "AI", logoSrc: "https://zrain.web.app/zrain-mascot.png?v=20261117", productHref: "./" });

@@ -24,7 +24,7 @@ test("chat and legal pages load the shared Zrain layout", () => {
       assert.ok(html.includes(fragment), `${name}: ${fragment}`);
     }
     assert.match(html, /zrain-ui\/brand\.css\?v=20261104/);
-    assert.match(html, /zrain-ui\/brand-init\.js\?v=20261104/);
+    assert.match(html, /zrain-ui\/brand-init\.js\?v=identity-20261117/);
     assert.match(html, /brand-integration\.css\?v=20261104/);
   }
 });

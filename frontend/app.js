@@ -123,10 +123,10 @@ function addMessage(role, content, { loading = false, attachment = null, attachm
   avatar.setAttribute("aria-hidden", "true");
   if (role === "assistant") {
     const logo = document.createElement("img");
-    logo.src = "./zrain-logo.webp";
+    logo.src = "https://zrain.web.app/zrain-mascot.png?v=20261117";
     logo.alt = "";
     logo.width = 25; logo.height = 25;
-    logo.onerror = () => { logo.onerror = null; logo.src = "https://zrain.web.app/zrain-logo.webp"; };
+    logo.onerror = () => { logo.onerror = null; logo.src = "./zrain-logo.webp"; };
     avatar.append(logo);
   } else avatar.textContent = "You";
   const bubble = document.createElement("div");
